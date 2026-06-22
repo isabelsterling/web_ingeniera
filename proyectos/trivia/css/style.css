@@ -1,0 +1,547 @@
+/* ========== RESET Y VARIABLES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #6C63FF;
+    --primary-dark: #5A52D6;
+    --secondary: #FF6584;
+    --success: #28A745;
+    --error: #DC3545;
+    --warning: #FFC107;
+    --info: #17A2B8;
+    --dark: #1E1E2F;
+    --dark-light: #2A2A40;
+    --gray: #888;
+    --white: #FFFFFF;
+    --gradient: linear-gradient(135deg, #6C63FF 0%, #FF6584 100%);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --border-radius: 20px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--dark);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ========== CONTENEDOR ========== */
+.trivia-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(108, 99, 255, 0.1);
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: var(--primary);
+    transform: translateX(-5px);
+}
+
+/* ========== TARJETA PRINCIPAL ========== */
+.trivia-card {
+    background: var(--dark-light);
+    border-radius: var(--border-radius);
+    padding: 35px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(108, 99, 255, 0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== PANTALLA DE INICIO ========== */
+.trivia-icon {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.trivia-icon i {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.gradient-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.trivia-card > p {
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 30px;
+}
+
+/* Modos de juego */
+.game-modes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.mode-card {
+    background: var(--dark);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.mode-card:hover {
+    transform: translateY(-3px);
+    background: rgba(108, 99, 255, 0.1);
+}
+
+.mode-card.selected {
+    border-color: var(--primary);
+    background: rgba(108, 99, 255, 0.15);
+}
+
+.mode-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.mode-card h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.mode-card p {
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+}
+
+.mode-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    background: rgba(108, 99, 255, 0.2);
+    border-radius: 20px;
+    font-size: 0.65rem;
+    color: var(--primary);
+}
+
+/* Categorías */
+.category-selector {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.category-selector h3 {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    color: var(--gray);
+}
+
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cat-btn {
+    padding: 8px 16px;
+    background: var(--dark);
+    border: 1px solid rgba(108, 99, 255, 0.3);
+    border-radius: 25px;
+    color: var(--gray);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.cat-btn:hover,
+.cat-btn.active {
+    background: var(--gradient);
+    color: white;
+    border-color: transparent;
+}
+
+/* Botón inicio */
+.start-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--gradient);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.start-btn:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-sm);
+}
+
+.high-score {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.high-score i {
+    color: var(--warning);
+    margin-right: 5px;
+}
+
+/* ========== PANTALLA DE JUEGO ========== */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.score, .question-counter, .timer {
+    background: var(--dark);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+}
+
+.score i, .question-counter i, .timer i {
+    margin-right: 8px;
+    color: var(--primary);
+}
+
+.timer {
+    font-family: monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.timer.warning {
+    color: var(--warning);
+    animation: pulse 0.5s infinite;
+}
+
+.timer.danger {
+    color: var(--error);
+    animation: pulse 0.3s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.progress-bar {
+    height: 6px;
+    background: var(--dark);
+    border-radius: 3px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--gradient);
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.question-container h2 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.option-btn {
+    background: var(--dark);
+    border: 2px solid rgba(108, 99, 255, 0.3);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: left;
+    color: var(--white);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.option-btn:hover:not(:disabled) {
+    border-color: var(--primary);
+    transform: translateX(5px);
+}
+
+.option-prefix {
+    width: 30px;
+    height: 30px;
+    background: rgba(108, 99, 255, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.option-btn.correct {
+    background: rgba(40, 167, 69, 0.2);
+    border-color: var(--success);
+}
+
+.option-btn.correct .option-prefix {
+    background: var(--success);
+    color: white;
+}
+
+.option-btn.incorrect {
+    background: rgba(220, 53, 69, 0.2);
+    border-color: var(--error);
+}
+
+.option-btn.incorrect .option-prefix {
+    background: var(--error);
+    color: white;
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.feedback {
+    background: rgba(108, 99, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feedback i {
+    font-size: 1.5rem;
+}
+
+.feedback.correct i {
+    color: var(--success);
+}
+
+.feedback.incorrect i {
+    color: var(--error);
+}
+
+/* ========== PANTALLA DE RESULTADOS ========== */
+.result-card {
+    text-align: center;
+}
+
+.result-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.result-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.stat-circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.stat-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.stat-center span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.stat-center small {
+    font-size: 0.7rem;
+    color: var(--gray);
+}
+
+.stat-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+}
+
+.detail {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.detail i {
+    width: 25px;
+}
+
+.detail i.fa-check-circle { color: var(--success); }
+.detail i.fa-times-circle { color: var(--error); }
+.detail i.fa-clock { color: var(--info); }
+.detail i.fa-chart-line { color: var(--primary); }
+
+.result-message {
+    background: rgba(108, 99, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    margin: 20px 0;
+    font-size: 1rem;
+}
+
+.result-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.restart-btn, .home-btn {
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.restart-btn {
+    background: var(--gradient);
+    color: white;
+}
+
+.home-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+.restart-btn:hover, .home-btn:hover {
+    transform: scale(1.05);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 700px) {
+    .trivia-card {
+        padding: 20px;
+    }
+    
+    .game-modes {
+        grid-template-columns: 1fr;
+    }
+    
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-header {
+        justify-content: center;
+    }
+    
+    .question-container h2 {
+        font-size: 1.1rem;
+    }
+    
+    .option-btn {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+    
+    .result-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-details {
+        width: 100%;
+    }
+    
+    .result-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-buttons {
+        gap: 8px;
+    }
+    
+    .cat-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+}

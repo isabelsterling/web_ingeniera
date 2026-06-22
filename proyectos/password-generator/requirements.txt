@@ -1,0 +1,9 @@
+# No se requieren dependencias externas
+# Solo se usa la biblioteca estándar de Python:
+# - random
+# - string
+# - sys
+# - os
+# - datetime
+# - json
+# - math

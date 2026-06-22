@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio de proyectos de Isabel Sterling - Ingeniería de Software con Inteligencia Artificial" />
+  <meta name="author" content="Isabel Sterling" />
+  <title>Proyectos | Isabel Sterling</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/logois.png" />
+  
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="css/styles-unificado.css" />
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="navbar-brand">
+        <img src="img/logois.png" alt="Logo IS" />
+        <span class="brand-text">Isabel <span class="brand-accent">Sterling</span></span>
+      </div>
+      
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="proyectos.html" class="active">Proyectos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      
+      <a href="https://wa.me/51953870664" class="btn-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ========== HEADER DE PROYECTOS ========== -->
+    <section class="projects-header" data-aos="fade-up">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Mi trabajo</span>
+          <h1>Mis <span class="gradient-text">Proyectos</span></h1>
+          <p>Una colección de mis desarrollos web, aplicaciones interactivas y proyectos de IA</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FILTROS ========== -->
+    <section class="filters-section" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
+        <div class="filters-container">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="html-css">🌐 HTML + CSS</button>
+          <button class="filter-btn" data-filter="bootstrap">💻 Bootstrap</button>
+          <button class="filter-btn" data-filter="javascript">⚙️ JavaScript</button>
+          <button class="filter-btn" data-filter="forms">📋 Formularios</button>
+          <button class="filter-btn" data-filter="python">🐍 Python (Futuro)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROYECTOS HTML + CSS ========== -->
+    <section class="projects-section" data-aos="fade-up" data-aos-delay="150">
+      <div class="container">
+        
+        <!-- HTML + CSS -->
+        <div class="category-wrapper" data-category="html-css">
+          <div class="category-header">
+            <h2><i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i> Proyectos con HTML + CSS</h2>
+            <p>Diseños responsivos, semánticos y con estilos modernos</p>
+          </div>
+          <div class="projects-grid">
+            
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="project-icon">
+                <i class="fas fa-user-astronaut"></i>
+              </div>
+              <h3>Página Web Personal</h3>
+              <p>Sitio web portafolio profesional con estructura modular, HTML semántico, CSS con gradientes, animaciones y media queries. Organizado en carpetas para fácil mantenimiento.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">Responsive</span>
+                <span class="tech-tag">Flexbox/Grid</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/link-tools/index.html" class="btn-project demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="250">
+              <div class="project-icon">
+                <i class="fas fa-blog"></i>
+              </div>
+              <h3>Blog de Tecnología</h3>
+              <p>Sitio web estático tipo blog con artículos sobre tecnología, usando listas, imágenes y maquetación avanzada con CSS Grid para un diseño moderno.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">CSS Grid</span>
+                <span class="tech-tag">Responsive</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-project demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+              <div class="project-icon">
+                <i class="fas fa-copy"></i>
+              </div>
+              <h3>Clon de Landing Page</h3>
+              <p>Recreación de una página principal de marca reconocida para practicar diseño web, estructura, tipografía y componentes visuales con HTML5 y CSS3 puro.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">Responsive</span>
+                <span class="tech-tag">UI/UX</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-project demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bootstrap -->
+        <div class="category-wrapper" data-category="bootstrap">
+          <div class="category-header">
+            <h2><i class="fab fa-bootstrap"></i> Proyectos con Bootstrap</h2>
+            <p>Desarrollos rápidos y responsivos usando el framework Bootstrap 5</p>
+          </div>
+          <div class="projects-grid">
+            
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="project-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3>Sitio Web Responsive</h3>
+              <p>Página web adaptable a diferentes dispositivos usando Bootstrap 5. Incluye navbar responsivo, cards, grid system y componentes interactivos.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">Bootstrap 5</span>
+                <span class="tech-tag">Responsive</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-project demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="250">
+              <div class="project-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Landing Page de Producto</h3>
+              <p>Página de presentación de producto usando componentes de Bootstrap como carrusel, cards, formularios y modales para una experiencia completa.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">Bootstrap 5</span>
+                <span class="tech-tag">CSS3</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-project demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="category-wrapper" data-category="javascript">
+          <div class="category-header">
+            <h2><i class="fab fa-js"></i> Proyectos con JavaScript</h2>
+            <p>Aplicaciones interactivas con lógica de programación y manipulación del DOM</p>
+          </div>
+          <div class="projects-grid">
+            
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="project-icon">
+                <i class="fas fa-check-square"></i>
+              </div>
+              <h3>Lista de Tareas</h3>
+              <p>Aplicación interactiva que permite agregar, marcar como completadas y eliminar tareas. Practica manipulación del DOM y manejo de eventos.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">DOM</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/to-do-list/index.html" class="btn-project demo" target="_blank"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="250">
+              <div class="project-icon">
+                <i class="fas fa-calculator"></i>
+              </div>
+              <h3>Calculadora Básica</h3>
+              <p>Calculadora funcional que realiza operaciones matemáticas básicas: suma, resta, multiplicación y división con interfaz amigable.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/calculadora/index.html" class="btn-project demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+              <div class="project-icon">
+                <i class="fas fa-exchange-alt"></i>
+              </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="project-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h3>Conversor de Monedas</h3>
+                <p>Aplicación que convierte múltiples monedas en tiempo real con historial, favoritos, gráfico de tendencias y modo oscuro/claro.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">API</span>
+                    <span class="tech-tag">Chart.js</span>
+                </div>
+                <div class="project-links">
+                    <a href="/proyectos/conversor-de-monedas/index.html" class="btn-project demo" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="350">
+              <div class="project-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h3>Juego de Memoria</h3>
+              <p>Juego interactivo donde el usuario debe voltear cartas y encontrar las parejas. Practica eventos, lógica condicional y temporizadores.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">DOM</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-project demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="project-icon">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                <h3>Trivia Interactiva</h3>
+                <p>Aplicación de preguntas y respuestas con múltiples modos de dificultad, categorías, puntaje acumulado, temporizador y estadísticas detalladas.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Canvas API</span>
+                </div>
+                <div class="project-links">
+                    <a href="proyectos/trivia/index.html" class="btn-project demo" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="450">
+              <div class="project-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <h3>Reloj Mundial</h3>
+              <p>Aplicación que muestra la hora en distintas ciudades usando objetos Date y actualización automática de la interfaz.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Date API</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/world-clock/index.html" class="btn-project demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="500">
+              <div class="project-icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <h3>Buscador Dinámico</h3>
+              <p>Aplicación que filtra elementos de una lista en tiempo real mientras el usuario escribe. Refuerza eventos de teclado y DOM.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Eventos</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-project demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="550">
+            <div class="project-icon">
+                <i class="fas fa-save"></i>
+            </div>
+            <h3>Notas con LocalStorage</h3>
+            <p>Aplicación completa de notas con CRUD, categorías, búsqueda, notas fijadas, persistencia y exportación/importación de datos.</p>
+            <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">localStorage</span>
+            </div>
+            <div class="project-links">
+                <a href="proyectos/notes-app/index.html" class="btn-project demo" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+            </div>
+        </div>
+
+        <!-- Formularios -->
+        <div class="category-wrapper" data-category="forms">
+          <div class="category-header">
+            <h2><i class="fas fa-file-alt"></i> Proyectos con Formularios</h2>
+            <p>Validaciones, envío de datos y conexión con Firebase</p>
+          </div>
+          <div class="projects-grid">
+            
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="project-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <h3>Formulario de Contacto</h3>
+              <p>Formulario con validación básica de campos, almacenamiento en Firebase y diseño responsivo. Incluye feedback visual.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+              <div class="project-links">
+                <a href="" class="btn-project demo" target="_blank"><i class="fas fa-external-link-alt"></i> Ver Formulario</a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="250">
+              <div class="project-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3>Formulario de Matrícula</h3>
+              <p>Simulación de registro de estudiantes con campos validados, selección múltiple y almacenamiento en base de datos.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-project demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyectos con IA -->
+        <section class="category-wrapper" data-category="ia">
+            <div class="category-header">
+                <h2><i class="fas fa-brain"></i> Proyectos con Inteligencia Artificial</h2>
+                <p>Aplicaciones que utilizan NLP y Machine Learning básico</p>
+            </div>
+            <div class="projects-grid">
+                
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="project-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Chatbot con NLP</h3>
+                    <p>Bot conversacional que utiliza procesamiento de lenguaje natural para reconocer intenciones y responder preguntas sobre el portafolio.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">IA</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="proyectos/chatbot/index.html" class="btn-project demo" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Probar Chatbot
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Python (Futuro) -->
+        <div class="category-wrapper" data-category="python">
+          <div class="category-header">
+            <h2><i class="fab fa-python"></i> Proyectos Futuros con Python</h2>
+            <p>Próximos desarrollos en backend, automatización e inteligencia artificial</p>
+          </div>
+          <div class="projects-grid">
+            
+            <div class="project-card future" data-aos="zoom-in" data-aos-delay="200">
+              <div class="project-icon">
+                <i class="fas fa-chart-simple"></i>
+              </div>
+              <h3>Sistema de Gestión</h3>
+              <p>Aplicación de consola para gestionar información usando Python. Proyecto planeado para próximos semestres.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">CRUD</span>
+                <span class="tech-tag">Consola</span>
+              </div>
+              <div class="project-badge">🚀 Próximamente</div>
+            </div>
+
+            <div class="project-card future" data-aos="zoom-in" data-aos-delay="300">
+              <div class="project-icon">
+                <i class="fas fa-address-book"></i>
+              </div>
+              <h3>Gestor de Contactos</h3>
+              <p>Aplicación en consola con operaciones CRUD completa: crear, leer, actualizar y eliminar contactos.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">CRUD</span>
+                <span class="tech-tag">Listas/Diccionarios</span>
+              </div>
+              <div class="project-badge">🚀 Próximamente</div>
+            </div>
+
+            <div class="project-card future" data-aos="zoom-in" data-aos-delay="350">
+              <div class="project-icon">
+                <i class="fas fa-key"></i>
+              </div>
+              <h3>Generador de Contraseñas</h3>
+              <p>Programa que genera contraseñas aleatorias seguras usando librerías random y string de Python.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Random</span>
+                <span class="tech-tag">Seguridad</span>
+              </div>
+              <div class="project-badge">🚀 Próximamente</div>
+            </div>
+
+            <div class="project-card future" data-aos="zoom-in" data-aos-delay="400">
+              <div class="project-icon">
+                <i class="fas fa-boxes"></i>
+              </div>
+              <h3>Mini Sistema de Inventario</h3>
+              <p>Aplicación en consola para registrar productos, calcular stock y mostrar reportes básicos.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Inventario</span>
+                <span class="tech-tag">Archivos</span>
+              </div>
+              <div class="project-badge">🚀 Próximamente</div>
+            </div>
+
+            <div class="project-card future" data-aos="zoom-in" data-aos-delay="450">
+              <div class="project-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <h3>Analizador de Texto</h3>
+              <p>Programa que lee archivos de texto y cuenta palabras, letras y frases. Manejo de archivos y cadenas.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Archivos</span>
+                <span class="tech-tag">Procesamiento</span>
+              </div>
+              <div class="project-badge">🚀 Próximamente</div>
+            </div>
+
+            <div class="project-card future" data-aos="zoom-in" data-aos-delay="500">
+              <div class="project-icon">
+                <i class="fas fa-dice"></i>
+              </div>
+              <h3>Adivina el Número</h3>
+              <p>Juego clásico en consola donde el usuario debe adivinar un número aleatorio con pistas.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Bucles</span>
+                <span class="tech-tag">Condicionales</span>
+              </div>
+              <div class="project-badge">🚀 Próximamente</div>
+            </div>
+
+            <div class="project-card future" data-aos="zoom-in" data-aos-delay="550">
+              <div class="project-icon">
+                <i class="fas fa-thermometer-half"></i>
+              </div>
+              <h3>Conversor de Temperaturas</h3>
+              <p>Programa que convierte entre Celsius, Fahrenheit y Kelvin usando funciones matemáticas.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Funciones</span>
+                <span class="tech-tag">Matemáticas</span>
+              </div>
+              <div class="project-badge">🚀 Próximamente</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="cta" data-aos="fade-up">
+      <div class="container">
+        <div class="cta-content">
+          <h2>¿Te interesa <span class="gradient-text">colaborar</span> conmigo?</h2>
+          <p>Estoy abierta a nuevos proyectos, pasantías y oportunidades de aprendizaje.</p>
+          <a href="contacto.html" class="btn btn-primary btn-large">
+            <i class="fas fa-comment-dots"></i> Hablemos
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="img/logois.png" alt="Logo IS" />
+          <span>Isabel Sterling</span>
+        </div>
+        <p>Estudiante de Ingeniería de Software con IA, creando soluciones tecnológicas innovadoras.</p>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Enlaces rápidos</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Contacto</h3>
+        <p><i class="fas fa-envelope"></i> 1663551@senati.pe</p>
+        <p><i class="fas fa-phone"></i> +51 953 870 664</p>
+        <p><i class="fas fa-map-marker-alt"></i> Arequipa, Perú</p>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Redes Sociales</h3>
+        <div class="social-links">
+          <a href="https://www.facebook.com/isabelsterlingg" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/isabelsterlingg/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/isabelsterling" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/isabelsterling" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.youtube.com/@isabelsterlingg" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Isabel Sterling - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  
+  <script>
+    // Inicializar AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // ===== FILTROS DE PROYECTOS =====
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const categoryWrappers = document.querySelectorAll('.category-wrapper');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Actualizar botón activo
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const filterValue = btn.getAttribute('data-filter');
+        
+        categoryWrappers.forEach(wrapper => {
+          if (filterValue === 'all') {
+            wrapper.style.display = 'block';
+          } else {
+            const category = wrapper.getAttribute('data-category');
+            if (category === filterValue) {
+              wrapper.style.display = 'block';
+            } else {
+              wrapper.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+
+    // Menú hamburguesa
+    const menuToggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+    
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>
