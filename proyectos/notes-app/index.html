@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Notas App | Isabel Sterling</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="notes-container">
+        <!-- Botón para volver al portafolio -->
+        <a href="../../proyectos.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Volver a Proyectos
+        </a>
+
+        <div class="notes-app">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="logo">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h2>Mis Notas</h2>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-card">
+                        <span class="stat-value" id="totalNotes">0</span>
+                        <span class="stat-label">Total</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="pinnedNotes">0</span>
+                        <span class="stat-label">Fijadas</span>
+                    </div>
+                </div>
+
+                <div class="categories">
+                    <h3><i class="fas fa-tags"></i> Categorías</h3>
+                    <button class="category-btn active" data-category="all">
+                        <i class="fas fa-list"></i> Todas
+                        <span class="count" id="allCount">0</span>
+                    </button>
+                    <button class="category-btn" data-category="personal">
+                        <i class="fas fa-user"></i> Personal
+                        <span class="count" id="personalCount">0</span>
+                    </button>
+                    <button class="category-btn" data-category="trabajo">
+                        <i class="fas fa-briefcase"></i> Trabajo
+                        <span class="count" id="workCount">0</span>
+                    </button>
+                    <button class="category-btn" data-category="estudio">
+                        <i class="fas fa-graduation-cap"></i> Estudio
+                        <span class="count" id="studyCount">0</span>
+                    </button>
+                    <button class="category-btn" data-category="ideas">
+                        <i class="fas fa-lightbulb"></i> Ideas
+                        <span class="count" id="ideasCount">0</span>
+                    </button>
+                </div>
+
+                <div class="sidebar-footer">
+                    <button class="export-btn" id="exportBtn">
+                        <i class="fas fa-download"></i> Exportar
+                    </button>
+                    <button class="import-btn" id="importBtn">
+                        <i class="fas fa-upload"></i> Importar
+                    </button>
+                    <input type="file" id="importFile" accept=".json" style="display: none">
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Header -->
+                <div class="main-header">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Buscar notas...">
+                    </div>
+                    <button class="new-note-btn" id="newNoteBtn">
+                        <i class="fas fa-plus"></i> Nueva Nota
+                    </button>
+                </div>
+
+                <!-- Grid de notas -->
+                <div class="notes-grid" id="notesGrid">
+                    <!-- Las notas se renderizan aquí -->
+                    <div class="empty-notes">
+                        <i class="fas fa-sticky-note"></i>
+                        <h3>No hay notas</h3>
+                        <p>Haz clic en "Nueva Nota" para crear tu primera nota</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para crear/editar nota -->
+            <div class="modal" id="noteModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="modalTitle">Nueva Nota</h3>
+                        <button class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="noteTitle" placeholder="Título de la nota" maxlength="100">
+                        <div class="note-tools">
+                            <select id="noteCategory">
+                                <option value="personal">👤 Personal</option>
+                                <option value="trabajo">💼 Trabajo</option>
+                                <option value="estudio">📚 Estudio</option>
+                                <option value="ideas">💡 Ideas</option>
+                            </select>
+                            <label class="pin-checkbox">
+                                <input type="checkbox" id="notePinned">
+                                <i class="fas fa-thumbtack"></i> Fijar nota
+                            </label>
+                        </div>
+                        <textarea id="noteContent" placeholder="Escribe tu nota aquí..."></textarea>
+                        <div class="char-count">
+                            <span id="charCount">0</span> caracteres
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="cancel-btn">Cancelar</button>
+                        <button class="save-btn" id="saveNoteBtn">Guardar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal de confirmación -->
+            <div class="modal" id="confirmModal">
+                <div class="modal-content small">
+                    <div class="modal-header">
+                        <h3>Confirmar</h3>
+                        <button class="close-confirm">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="confirmMessage">¿Estás seguro de que quieres eliminar esta nota?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="cancel-confirm">Cancelar</button>
+                        <button class="confirm-delete">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

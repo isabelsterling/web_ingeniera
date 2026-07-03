@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>🏓 Ping Pong - Juego</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-wrapper">
+        <!-- Botón para volver -->
+        <a href="../../juegos/index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Volver a Juegos
+        </a>
+
+        <div class="game-container">
+            <!-- Header del juego -->
+            <div class="game-header">
+                <div class="game-title">
+                    <div class="title-icon">🏓</div>
+                    <div>
+                        <h1>Ping Pong</h1>
+                        <p class="subtitle">El clásico tenis de mesa</p>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button class="control-btn" id="restartBtn" title="Reiniciar">
+                        <i class="fas fa-redo-alt"></i>
+                    </button>
+                    <button class="control-btn" id="pauseBtn" title="Pausa">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Selector de modo -->
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="ai">🤖 vs IA</button>
+                <button class="mode-btn" data-mode="pvp">👥 2 Jugadores</button>
+            </div>
+
+            <!-- Marcador -->
+            <div class="scoreboard">
+                <div class="score-box player-score">
+                    <span class="score-label">Jugador 1</span>
+                    <span class="score-value" id="player1Score">0</span>
+                </div>
+                <div class="score-divider">⚡</div>
+                <div class="score-box player-score">
+                    <span class="score-label" id="player2Label">Jugador 2</span>
+                    <span class="score-value" id="player2Score">0</span>
+                </div>
+            </div>
+
+            <!-- Canvas del juego -->
+            <div class="canvas-wrapper">
+                <canvas id="gameCanvas" width="800" height="500"></canvas>
+                <!-- Overlay de pausa -->
+                <div class="game-overlay" id="pauseOverlay" style="display: none;">
+                    <div class="overlay-content">
+                        <i class="fas fa-pause-circle"></i>
+                        <h2>Pausa</h2>
+                        <p>Presiona <kbd>Espacio</kbd> o haz clic en el botón de pausa para continuar</p>
+                    </div>
+                </div>
+                <!-- Overlay de game over -->
+                <div class="game-overlay" id="gameOverOverlay" style="display: none;">
+                    <div class="overlay-content">
+                        <i class="fas fa-trophy"></i>
+                        <h2 id="winnerText">🏆 ¡Ganador!</h2>
+                        <p>Puntaje final: <span id="finalScore1">0</span> - <span id="finalScore2">0</span></p>
+                        <button class="play-again-btn" id="playAgainBtn">
+                            <i class="fas fa-play"></i> Jugar de nuevo
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles táctiles (móvil) -->
+            <div class="touch-controls" id="touchControls">
+                <div class="touch-grid">
+                    <div class="touch-row">
+                        <button class="touch-btn" id="touchUp1">
+                            <i class="fas fa-chevron-up"></i> P1
+                        </button>
+                        <button class="touch-btn" id="touchDown1">
+                            <i class="fas fa-chevron-down"></i> P1
+                        </button>
+                    </div>
+                    <div class="touch-divider">VS</div>
+                    <div class="touch-row">
+                        <button class="touch-btn" id="touchUp2">
+                            <i class="fas fa-chevron-up"></i> P2
+                        </button>
+                        <button class="touch-btn" id="touchDown2">
+                            <i class="fas fa-chevron-down"></i> P2
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles de teclado info -->
+            <div class="controls-info">
+                <div class="key-group">
+                    <span class="key-label">Jugador 1:</span>
+                    <kbd>W</kbd> <span class="key-text">arriba</span>
+                    <kbd>S</kbd> <span class="key-text">abajo</span>
+                </div>
+                <div class="key-group">
+                    <span class="key-label">Jugador 2:</span>
+                    <kbd>↑</kbd> <span class="key-text">arriba</span>
+                    <kbd>↓</kbd> <span class="key-text">abajo</span>
+                </div>
+                <div class="key-group">
+                    <span class="key-label">Controles:</span>
+                    <kbd>Espacio</kbd> <span class="key-text">Pausa</span>
+                    <span class="key-separator">|</span>
+                    <kbd>R</kbd> <span class="key-text">Reiniciar</span>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="game-footer">
+                <p>
+                    <i class="fas fa-info-circle"></i>
+                    El primero en llegar a <strong>5 puntos</strong> gana. ¡Buena suerte!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

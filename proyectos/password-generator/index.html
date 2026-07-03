@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Generador de Contraseñas | Isabel Sterling</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="password-container">
+        <!-- Botón para volver al portafolio -->
+        <a href="../../proyectos.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Volver a Proyectos
+        </a>
+
+        <div class="password-card">
+            <!-- Header -->
+            <div class="password-header">
+                <div class="header-icon">
+                    <i class="fas fa-key"></i>
+                </div>
+                <div class="header-text">
+                    <h1>Generador de <span class="gradient-text">Contraseñas</span></h1>
+                    <p>Crea contraseñas seguras y personalizadas</p>
+                </div>
+            </div>
+
+            <!-- Contraseña generada -->
+            <div class="password-display">
+                <div class="password-field" id="passwordField">
+                    <span id="generatedPassword">Haz clic en "Generar"</span>
+                </div>
+                <div class="password-actions">
+                    <button class="copy-btn" id="copyBtn" title="Copiar al portapapeles">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                    <button class="regenerate-btn" id="regenerateBtn" title="Generar nueva contraseña">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Análisis de seguridad -->
+            <div class="security-analysis">
+                <div class="strength-bar">
+                    <div class="strength-fill" id="strengthFill" style="width: 0%;"></div>
+                </div>
+                <div class="security-details">
+                    <div class="strength-label">
+                        <span id="strengthLabel">Sin contraseña</span>
+                        <span id="strengthScore">0/100</span>
+                    </div>
+                    <div class="strength-metrics">
+                        <span id="entropyInfo">Entropía: 0 bits</span>
+                        <span id="crackTimeInfo">Tiempo de crackeo: --</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opciones de personalización -->
+            <div class="options-section">
+                <h3><i class="fas fa-sliders-h"></i> Personalizar contraseña</h3>
+                
+                <div class="option-group">
+                    <div class="option-label">
+                        <span>Longitud</span>
+                        <span id="lengthDisplay">12</span>
+                    </div>
+                    <input type="range" id="lengthSlider" min="6" max="32" value="12" class="slider">
+                    <div class="length-marks">
+                        <span>6</span>
+                        <span>32</span>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <div class="option-item">
+                        <label class="switch">
+                            <input type="checkbox" id="includeUppercase" checked>
+                            <span class="slider-check"></span>
+                        </label>
+                        <span class="option-text">Mayúsculas (A-Z)</span>
+                    </div>
+                    <div class="option-item">
+                        <label class="switch">
+                            <input type="checkbox" id="includeLowercase" checked>
+                            <span class="slider-check"></span>
+                        </label>
+                        <span class="option-text">Minúsculas (a-z)</span>
+                    </div>
+                    <div class="option-item">
+                        <label class="switch">
+                            <input type="checkbox" id="includeNumbers" checked>
+                            <span class="slider-check"></span>
+                        </label>
+                        <span class="option-text">Números (0-9)</span>
+                    </div>
+                    <div class="option-item">
+                        <label class="switch">
+                            <input type="checkbox" id="includeSymbols" checked>
+                            <span class="slider-check"></span>
+                        </label>
+                        <span class="option-text">Símbolos (!@#$%)</span>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <div class="option-item">
+                        <label class="switch">
+                            <input type="checkbox" id="excludeSimilar">
+                            <span class="slider-check"></span>
+                        </label>
+                        <span class="option-text">Excluir caracteres similares (i, l, 1, L, o, 0, O)</span>
+                    </div>
+                    <div class="option-item">
+                        <label class="switch">
+                            <input type="checkbox" id="excludeAmbiguous">
+                            <span class="slider-check"></span>
+                        </label>
+                        <span class="option-text">Excluir caracteres ambiguos ({ } [ ] ( ) / \ ' " ` ~ , ; : . < >)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón generar -->
+            <button class="generate-btn" id="generateBtn">
+                <i class="fas fa-shield-alt"></i> Generar Contraseña Segura
+            </button>
+
+            <!-- Historial de contraseñas -->
+            <div class="history-section">
+                <div class="history-header">
+                    <h3><i class="fas fa-history"></i> Historial de contraseñas</h3>
+                    <button class="clear-history-btn" id="clearHistoryBtn">
+                        <i class="fas fa-trash-alt"></i> Limpiar
+                    </button>
+                </div>
+                <div class="history-list" id="historyList">
+                    <div class="empty-history">
+                        <i class="fas fa-clock"></i>
+                        <p>No hay contraseñas en el historial</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="password-footer">
+                <p>
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Contraseñas generadas localmente en tu navegador. Nunca se almacenan en servidores externos.</span>
+                </p>
+                <div class="footer-tips">
+                    <span><i class="fas fa-lightbulb"></i> Usa contraseñas de al menos 12 caracteres</span>
+                    <span><i class="fas fa-lightbulb"></i> Combina diferentes tipos de caracteres</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
