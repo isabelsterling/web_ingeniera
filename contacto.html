@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contacta con Isabel Sterling - Estudiante de Ingeniería de Software con Inteligencia Artificial" />
+  <meta name="author" content="Isabel Sterling" />
+  <title>Contacto | Isabel Sterling</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="navbar-brand">
+        <img src="img/logo.svg" alt="Isabel Sterling" class="logo-svg" />
+        <span class="brand-text">Isabel <span class="brand-accent">Sterling</span></span>
+      </div>
+      
+      <div class="menu-toggle" id="menuToggle" aria-label="Menú">
+        <i class="fas fa-bars"></i>
+      </div>
+      
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+      </ul>
+      
+      <a href="https://wa.me/51953870664" class="btn-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ========== HEADER DE CONTACTO ========== -->
+    <section class="contact-header" data-aos="fade-up">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Conectemos</span>
+          <h1>Hablemos de <span class="gradient-text">tecnología</span></h1>
+          <p>¿Tienes un proyecto en mente? ¿Quieres colaborar? Estoy aquí para ayudarte</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TARJETAS DE INFORMACIÓN ========== -->
+    <section class="contact-cards" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
+        <div class="contact-cards-grid">
+          <div class="contact-card" data-aos="zoom-in" data-aos-delay="150">
+            <div class="contact-card-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email</h3>
+            <p>1663551@senati.pe</p>
+            <a href="mailto:1663551@senati.pe" class="contact-card-link">
+              Enviar correo <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="contact-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="contact-card-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <h3>WhatsApp</h3>
+            <p>+51 953 870 664</p>
+            <a href="https://wa.me/51953870664" target="_blank" class="contact-card-link">
+              Escribir mensaje <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="contact-card" data-aos="zoom-in" data-aos-delay="250">
+            <div class="contact-card-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Ubicación</h3>
+            <p>Arequipa, Perú</p>
+            <a href="https://maps.google.com/?q=Arequipa+Peru" target="_blank" class="contact-card-link">
+              Ver mapa <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="contact-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="contact-card-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <h3>GitHub</h3>
+            <p>@isabelsterling</p>
+            <a href="https://github.com/isabelsterling" target="_blank" class="contact-card-link">
+              Ver repositorios <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FORMULARIO Y MAPA ========== -->
+    <section class="contact-form-section" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
+        <div class="contact-wrapper">
+          
+          <!-- Formulario -->
+          <div class="contact-form-container" data-aos="fade-right" data-aos-delay="200">
+            <div class="form-header">
+              <h2><i class="fas fa-paper-plane"></i> Envíame un mensaje</h2>
+              <p>Completa el formulario y te responderé lo antes posible</p>
+            </div>
+            
+            <form id="contacto-form" novalidate>
+              <div class="form-group">
+                <label for="nombre">
+                  <i class="fas fa-user"></i> Nombre completo <span class="required">*</span>
+                </label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">
+                  <i class="fas fa-envelope"></i> Correo electrónico <span class="required">*</span>
+                </label>
+                <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="asunto">
+                  <i class="fas fa-tag"></i> Asunto
+                </label>
+                <input type="text" id="asunto" name="asunto" placeholder="¿Sobre qué quieres hablar?" />
+              </div>
+
+              <div class="form-group">
+                <label for="mensaje">
+                  <i class="fas fa-comment"></i> Mensaje <span class="required">*</span>
+                </label>
+                <textarea id="mensaje" name="mensaje" rows="6" placeholder="Cuéntame sobre tu proyecto, duda o propuesta..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit" id="submitBtn">
+                <span class="btn-text"><i class="fas fa-paper-plane"></i> Enviar mensaje</span>
+                <span class="btn-loading" style="display: none;">
+                  <i class="fas fa-spinner fa-spin"></i> Enviando...
+                </span>
+              </button>
+            </form>
+            
+            <!-- Mensaje de éxito oculto -->
+            <div id="successMessage" class="success-message" style="display: none;">
+              <i class="fas fa-check-circle"></i>
+              <h3>¡Mensaje enviado!</h3>
+              <p>Gracias por contactarme. Te responderé muy pronto.</p>
+            </div>
+          </div>
+
+          <!-- Mapa y Redes -->
+          <div class="contact-info-container" data-aos="fade-left" data-aos-delay="250">
+            <div class="map-container">
+              <h3><i class="fas fa-map"></i> Mi ubicación</h3>
+              <div class="map-wrapper">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61309.23399872868!2d-71.56682932445495!3d-16.39882294029338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a487785b189%3A0xa3c32b3d8f96dcfe!2sArequipa!5e0!3m2!1ses!2spe!4v1700000000000!5m2!1ses!2spe" 
+                  width="100%" 
+                  height="250" 
+                  style="border:0; border-radius: 12px;" 
+                  allowfullscreen="" 
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div>
+
+            <div class="social-contact">
+              <h3><i class="fas fa-share-alt"></i> Redes Sociales</h3>
+              <div class="social-grid">
+                <a href="https://www.facebook.com/isabelsterlingg" target="_blank" class="social-item facebook">
+                  <i class="fab fa-facebook-f"></i>
+                  <span>Facebook</span>
+                </a>
+                <a href="https://www.instagram.com/isabelsterlingg/" target="_blank" class="social-item instagram">
+                  <i class="fab fa-instagram"></i>
+                  <span>Instagram</span>
+                </a>
+                <a href="https://www.linkedin.com/in/isabel-sterling-9995793b3/" target="_blank" class="social-item linkedin">
+                  <i class="fab fa-linkedin-in"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/isabelsterling" target="_blank" class="social-item github">
+                  <i class="fab fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://www.youtube.com/@isabelsterlingg" target="_blank" class="social-item youtube">
+                  <i class="fab fa-youtube"></i>
+                  <span>YouTube</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Horario de atención -->
+            <div class="hours-container">
+              <h3><i class="fas fa-clock"></i> Horario de atención</h3>
+              <div class="hours-list">
+                <div class="hour-item">
+                  <span>Lunes - Viernes:</span>
+                  <span class="hour-time">8:00 AM - 18:00 PM</span>
+                </div>
+                <div class="hour-item">
+                  <span>Domingos:</span>
+                  <span class="hour-time">Consultas por mensaje vía WhatsApp</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PREGUNTAS FRECUENTES ========== -->
+    <!-- ========== PREGUNTAS FRECUENTES ========== -->
+    <section class="faq-section" data-aos="fade-up">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">FAQ</span>
+          <h2>Preguntas <span class="gradient-text">frecuentes</span></h2>
+          <p>Resuelve tus dudas antes de contactarme</p>
+        </div>
+        <div class="faq-grid">
+          
+          <!-- 1. ¿En qué tipo de proyectos puedo colaborar? -->
+          <div class="faq-item" data-aos="flip-left" data-aos-delay="100">
+            <div class="faq-question">
+              <i class="fas fa-question-circle"></i>
+              <h3>¿En qué tipo de proyectos puedo colaborar?</h3>
+              <i class="fas fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Puedo colaborar en desarrollo web frontend, aplicaciones interactivas con JavaScript, integración de APIs, y proyectos educativos relacionados con inteligencia artificial y ciencia de datos.</p>
+            </div>
+          </div>
+
+          <!-- 2. ¿Cuánto tiempo tardas en responder? -->
+          <div class="faq-item" data-aos="flip-left" data-aos-delay="130">
+            <div class="faq-question">
+              <i class="fas fa-question-circle"></i>
+              <h3>¿Cuánto tiempo tardas en responder?</h3>
+              <i class="fas fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Generalmente respondo dentro de las 24 horas hábiles. Los fines de semana reviso mensajes ocasionalmente. Si es urgente, escríbeme por WhatsApp para una respuesta más rápida.</p>
+            </div>
+          </div>
+
+          <!-- 3. ¿Ofreces servicios gratuitos? -->
+          <div class="faq-item" data-aos="flip-left" data-aos-delay="160">
+            <div class="faq-question">
+              <i class="fas fa-question-circle"></i>
+              <h3>¿Ofreces servicios gratuitos?</h3>
+              <i class="fas fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Como estudiante, algunos proyectos pequeños puedo realizarlos como práctica (portafolio). Para proyectos más grandes o profesionales, podemos conversar sobre presupuesto y alcance. Todo es negociable.</p>
+            </div>
+          </div>
+
+          <!-- 4. ¿Aceptas pasantías o voluntariado? -->
+          <div class="faq-item" data-aos="flip-left" data-aos-delay="190">
+            <div class="faq-question">
+              <i class="fas fa-question-circle"></i>
+              <h3>¿Aceptas pasantías o voluntariado?</h3>
+              <i class="fas fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Sí, estoy abierta a oportunidades de pasantías, voluntariado o proyectos de aprendizaje colaborativo. No dudes en contactarme si tienes una propuesta interesante.</p>
+            </div>
+          </div>
+
+          <!-- 5. ¿Qué tecnologías dominas? -->
+          <div class="faq-item" data-aos="flip-left" data-aos-delay="220">
+            <div class="faq-question">
+              <i class="fas fa-question-circle"></i>
+              <h3>¿Qué tecnologías dominas actualmente?</h3>
+              <i class="fas fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Actualmente manejo: HTML5, CSS3, JavaScript, Bootstrap, Python, y fundamentos de IA como Machine Learning y NLP. También tengo conocimientos en bases de datos (MySQL, PostgreSQL).</p>
+            </div>
+          </div>
+
+          <!-- 6. ¿Puedes trabajar en equipo? -->
+          <div class="faq-item" data-aos="flip-left" data-aos-delay="250">
+            <div class="faq-question">
+              <i class="fas fa-question-circle"></i>
+              <h3>¿Puedes trabajar en equipo o de forma remota?</h3>
+              <i class="fas fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Sí, tengo experiencia trabajando en equipos multidisciplinarios y de forma remota. Manejo herramientas como Git, GitHub.</p>
+            </div>
+          </div>
+
+          <!-- 7. ¿Qué tipo de proyectos has realizado? -->
+          <div class="faq-item" data-aos="flip-left" data-aos-delay="280">
+            <div class="faq-question">
+              <i class="fas fa-question-circle"></i>
+              <h3>¿Qué tipo de proyectos has realizado?</h3>
+              <i class="fas fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-answer">
+              <p>He desarrollado: portafolios web, calculadoras interactivas, chatbots con NLP, conversores de monedas, sistemas de gestión de tareas, agendas de cumpleaños, planificadores semanales y juegos como Snake, Tetris y Flappy Bird.</p>
+            </div>
+          </div>
+
+          <!-- 8. ¿Tienes disponibilidad inmediata? -->
+          <div class="faq-item" data-aos="flip-left" data-aos-delay="310">
+            <div class="faq-question">
+              <i class="fas fa-question-circle"></i>
+              <h3>¿Tienes disponibilidad inmediata?</h3>
+              <i class="fas fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Actualmente soy estudiante, pero tengo disponibilidad para proyectos freelance y colaboraciones. Mi horario es flexible y puedo adaptarme a tus necesidades.</p>
+            </div>
+          </div>
+
+          <!-- 9. ¿Cómo puedo ver tu trabajo anterior? -->
+          <div class="faq-item" data-aos="flip-left" data-aos-delay="340">
+            <div class="faq-question">
+              <i class="fas fa-question-circle"></i>
+              <h3>¿Cómo puedo ver tu trabajo anterior?</h3>
+              <i class="fas fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Puedes explorar mi sección de <a href="proyectos.html" style="color: var(--primary-light);">Proyectos</a> donde tengo todos mis desarrollos organizados por categorías. También puedes visitar mi <a href="https://github.com/isabelsterling" target="_blank" style="color: var(--primary-light);">GitHub</a> para ver el código fuente.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA FINAL ========== -->
+    <section class="cta" data-aos="fade-up">
+      <div class="container">
+        <div class="cta-content">
+          <h2>¿Prefieres hablar <span class="gradient-text">directamente</span>?</h2>
+          <p>Escríbeme por WhatsApp y conversemos sobre tu proyecto</p>
+          <a href="https://wa.me/51953870664?text=Hola%20Isabel%2C%20vi%20tu%20portafolio%20y%20me%20gust%C3%B3%20tu%20trabajo.%20%C2%BFTe%20parece%20bien%20si%20conversamos%20sobre%20una%20idea%20que%20tengo%3F" class="btn btn-primary btn-large" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp Directo
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="img/logo-footer.svg" alt="Isabel Sterling" class="logo-svg-footer" />
+          <span>Isabel Sterling</span>
+        </div>
+        <p>Estudiante de Ingeniería de Software con IA, creando soluciones tecnológicas innovadoras.</p>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Enlaces rápidos</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Contacto</h3>
+        <p>
+          <i class="fas fa-envelope"></i> 
+          <a href="mailto:1663551@senati.pe?subject=Contacto%20desde%20tu%20portafolio&body=Hola%20Isabel%2C%20me%20gustaría%20contactarte%20para%20..." target="_blank" rel="noopener noreferrer">
+            1663551@senati.pe
+          </a>
+        </p>
+        <p>
+          <i class="fab fa-whatsapp"></i> 
+          <a href="https://wa.me/51953870664?text=Hola%20Isabel%2C%20vi%20tu%20portafolio%20y%20me%20gust%C3%B3%20tu%20trabajo.%20%C2%BFTe%20parece%20bien%20si%20conversamos%20sobre%20una%20idea%20que%20tengo%3F" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style="color: #25D366;">
+            953 870 664
+          </a>
+        </p>
+        <p>
+          <i class="fas fa-map-marker-alt"></i> 
+          <a href="https://www.google.com/maps/place/Arequipa,+Peru/@-16.398822,-71.566829,12z/" 
+            target="_blank" 
+            rel="noopener noreferrer">
+            Arequipa, Perú
+          </a>
+        </p>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Redes Sociales</h3>
+        <div class="social-links">
+          <a href="https://www.facebook.com/isabelsterlingg" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/isabelsterlingg/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/isabel-sterling-9995793b3/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/isabelsterling" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.youtube.com/@isabelsterlingg" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Isabel Sterling - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script type="module" src="js/cxn.js"></script>
+</body>
+</html>

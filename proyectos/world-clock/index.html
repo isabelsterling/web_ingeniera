@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Reloj Mundial | Isabel Sterling</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="clock-container">
+        <!-- Botón para volver al portafolio -->
+        <a href="../../proyectos.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Volver a Proyectos
+        </a>
+
+        <div class="clock-card">
+            <div class="clock-header">
+                <div class="header-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <div class="header-text">
+                    <h1>Reloj Mundial</h1>
+                    <p>Hora actual en diferentes países</p>
+                </div>
+                <div class="local-time" id="localTime">
+                    <span class="local-label">Tu hora</span>
+                    <span class="local-value" id="myLocalTime">--:--:--</span>
+                </div>
+            </div>
+
+            <!-- Tu ubicación -->
+            <div class="your-location">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="location-info">
+                    <h3>Tu ubicación</h3>
+                    <p id="yourLocation">Perú (Lima)</p>
+                    <span class="timezone" id="yourTimezone">UTC-5</span>
+                </div>
+                <div class="current-time-large" id="yourCurrentTime">
+                    <span class="hours" id="yourHours">--</span>
+                    <span class="separator">:</span>
+                    <span class="minutes" id="yourMinutes">--</span>
+                    <span class="separator">:</span>
+                    <span class="seconds" id="yourSeconds">--</span>
+                </div>
+            </div>
+
+            <!-- Selector de continentes -->
+            <div class="continent-filter">
+                <button class="continent-btn active" data-continent="all">
+                    <i class="fas fa-globe"></i> Todos
+                </button>
+                <button class="continent-btn" data-continent="americas">
+                    <i class="fas fa-globe-americas"></i> América
+                </button>
+                <button class="continent-btn" data-continent="europe">
+                    <i class="fas fa-globe-europe"></i> Europa
+                </button>
+                <button class="continent-btn" data-continent="asia">
+                    <i class="fas fa-globe-asia"></i> Asia
+                </button>
+                <button class="continent-btn" data-continent="oceania">
+                    <i class="fas fa-globe-oceania"></i> Oceanía
+                </button>
+            </div>
+
+            <!-- Grid de ciudades -->
+            <div class="cities-grid" id="citiesGrid">
+                <!-- Las ciudades se renderizan aquí -->
+            </div>
+
+            <!-- Tu lista de amigos favoritos -->
+            <div class="friends-section">
+                <div class="friends-header">
+                    <h3><i class="fas fa-users"></i> Mis amigos en el mundo</h3>
+                    <button class="add-friend-btn" id="addFriendBtn">
+                        <i class="fas fa-plus"></i> Agregar amigo
+                    </button>
+                </div>
+                <div class="friends-list" id="friendsList">
+                    <div class="empty-friends">
+                        <i class="fas fa-user-friends"></i>
+                        <p>No tienes amigos agregados</p>
+                        <p class="hint">Agrega amigos para ver sus horarios favoritos</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Consejos para conversar -->
+            <div class="tips-section">
+                <h3><i class="fas fa-lightbulb"></i> ¿Cuándo es buen momento para conversar?</h3>
+                <div class="tips-grid" id="tipsGrid">
+                    <!-- Consejos dinámicos -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para agregar amigo -->
+    <div class="modal" id="friendModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-plus"></i> Agregar amigo</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Nombre del amigo</label>
+                    <input type="text" id="friendName" placeholder="Ej: Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label>Ciudad / País</label>
+                    <select id="friendCity">
+                        <option value="">Selecciona una ciudad...</option>
+                        <optgroup label="🌎 América">
+                            <option value="America/Lima">🇵🇪 Lima, Perú</option>
+                            <option value="America/Mexico_City">🇲🇽 Ciudad de México</option>
+                            <option value="America/Bogota">🇨🇴 Bogotá, Colombia</option>
+                            <option value="America/Santiago">🇨🇱 Santiago, Chile</option>
+                            <option value="America/Buenos_Aires">🇦🇷 Buenos Aires, Argentina</option>
+                            <option value="America/Sao_Paulo">🇧🇷 São Paulo, Brasil</option>
+                            <option value="America/New_York">🇺🇸 Nueva York, EE.UU.</option>
+                            <option value="America/Los_Angeles">🇺🇸 Los Ángeles, EE.UU.</option>
+                            <option value="America/Toronto">🇨🇦 Toronto, Canadá</option>
+                        </optgroup>
+                        <optgroup label="🌍 Europa">
+                            <option value="Europe/Madrid">🇪🇸 Madrid, España</option>
+                            <option value="Europe/London">🇬🇧 Londres, Reino Unido</option>
+                            <option value="Europe/Paris">🇫🇷 París, Francia</option>
+                            <option value="Europe/Berlin">🇩🇪 Berlín, Alemania</option>
+                            <option value="Europe/Rome">🇮🇹 Roma, Italia</option>
+                            <option value="Europe/Moscow">🇷🇺 Moscú, Rusia</option>
+                        </optgroup>
+                        <optgroup label="🌏 Asia">
+                            <option value="Asia/Tokyo">🇯🇵 Tokio, Japón</option>
+                            <option value="Asia/Seoul">🇰🇷 Seúl, Corea del Sur</option>
+                            <option value="Asia/Shanghai">🇨🇳 Shanghái, China</option>
+                            <option value="Asia/Dubai">🇦🇪 Dubái, UAE</option>
+                            <option value="Asia/Bangkok">🇹🇭 Bangkok, Tailandia</option>
+                            <option value="Asia/Kolkata">🇮🇳 Nueva Delhi, India</option>
+                        </optgroup>
+                        <optgroup label="🌏 Oceanía">
+                            <option value="Australia/Sydney">🇦🇺 Sídney, Australia</option>
+                            <option value="Pacific/Auckland">🇳🇿 Auckland, Nueva Zelanda</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-modal">Cancelar</button>
+                <button class="save-friend">Guardar amigo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

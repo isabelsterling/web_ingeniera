@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerca de — LinkKit</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono&family=Outfit&display=swap">
+  <style>
+    /* ========== ESTILOS USANDO LAS VARIABLES DEL CSS ========== */
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      padding: 40px 20px;
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+    }
+    
+    .legal-page {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .legal-header {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 48px;
+      color: var(--ink);
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+    
+    .legal-header span {
+      color: var(--color-short);
+    }
+    
+    .legal-subtitle {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 40px;
+    }
+    
+    .legal-content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+    
+    .legal-content h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 24px 0 12px;
+      color: var(--ink);
+    }
+    
+    .legal-content h2:first-child {
+      margin-top: 0;
+    }
+    
+    .legal-content p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+    
+    .legal-content ul {
+      margin: 12px 0;
+      padding-left: 20px;
+    }
+    
+    .legal-content li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+      list-style: none;
+      position: relative;
+      padding-left: 20px;
+    }
+    
+    .legal-content li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--color-short);
+    }
+    
+    .legal-content strong {
+      color: var(--ink);
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 13px;
+      color: var(--color-short);
+      text-decoration: none;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+    
+    .back-link:hover {
+      color: var(--color-short-d);
+      transform: translateX(-4px);
+    }
+    
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 600px) {
+      body {
+        padding: 24px 16px;
+      }
+      
+      .legal-header {
+        font-size: 36px;
+      }
+      
+      .legal-content {
+        padding: 24px 20px;
+      }
+      
+      .legal-content h2 {
+        font-size: 16px;
+      }
+      
+      .legal-content p,
+      .legal-content li {
+        font-size: 13px;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      .legal-header {
+        font-size: 30px;
+      }
+      
+      .legal-content {
+        padding: 18px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="legal-page">
+    <div class="legal-header">LINK<span>KIT</span></div>
+    <div class="legal-subtitle">Acerca de</div>
+    
+    <div class="legal-content">
+      <h2>¿Qué es LinkKit?</h2>
+      <p>LinkKit es una herramienta web gratuita que ofrece un conjunto de utilidades para trabajar con enlaces y URLs. Actualmente proporciona 9 herramientas en una sola interfaz:</p>
+      <ul>
+        <li>✂️ Acortador de URLs — Convierte enlaces largos en cortos</li>
+        <li>⬛ Generador de Códigos QR — Crea códigos QR descargables</li>
+        <li>↩️ Expansor de Enlaces — Descubre la URL real detrás de enlaces acortados</li>
+        <li>✅ Verificador de Enlaces — Comprueba si un enlace está activo o roto</li>
+        <li>👁️ Preview Redes Sociales — Previsualiza enlaces como en Twitter/WhatsApp</li>
+        <li>📊 Constructor UTM — Crea URLs con parámetros de seguimiento</li>
+        <li>🔤 Codificador URL — Codifica/decodifica caracteres especiales</li>
+        <li>🧹 Limpiador de Enlaces — Elimina parámetros de seguimiento</li>
+        <li>📷 Lector de Códigos QR — Lee QR desde imágenes</li>
+      </ul>
+
+      <h2>Información del Proyecto</h2>
+      <p><strong>Versión:</strong> 2.0</p>
+      <p><strong>Lanzamiento:</strong> 2026</p>
+      <p><strong>Licencia:</strong> MIT License</p>
+      <p><strong>Código Fuente:</strong> Disponible en GitHub</p>
+
+      <h2>Tecnologías Utilizadas</h2>
+      <p>LinkKit está construido con tecnologías web estándar:</p>
+      <ul>
+        <li>HTML5, CSS3, JavaScript (Estado original)</li>
+        <li>QRCode.js — Generación de códigos QR</li>
+        <li>jsQR — Lectura de códigos QR</li>
+        <li>is.gd API — Servicio de acortamiento de URLs</li>
+        <li>All Origins API — Proxy para solicitudes CORS</li>
+      </ul>
+
+      <h2>Contacto</h2>
+      <p>Para sugerencias, reportes de errores o contribuciones, visita nuestro repositorio en GitHub o contacta por correo electrónico.</p>
+      
+      <a href="index.html" class="back-link">← Volver a LinkKit</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+  <defs>
+    <linearGradient id="logoGradFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6C63FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF6584;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <circle cx="30" cy="30" r="26" fill="url(#logoGradFooter)" opacity="0.12"/>
+  <circle cx="30" cy="30" r="24" fill="none" stroke="url(#logoGradFooter)" stroke-width="1.5" opacity="0.3"/>
+  <text x="30" y="38" font-family="'Inter', 'Segoe UI', sans-serif" font-size="26" font-weight="800" text-anchor="middle" fill="url(#logoGradFooter)" letter-spacing="-1">
+    IS
+  </text>
+</svg>

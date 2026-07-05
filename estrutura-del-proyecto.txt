@@ -1,0 +1,165 @@
+web-ingeniera/
+│
+├── index.html
+├── contacto.html
+├── proyectos.html
+│
+├── css/
+│   └── styles.css
+│
+├── js/
+│   └── main.js
+│
+├── img/
+│   ├── favicon.svg
+│   ├── fotoperfil.png
+│   ├── logo-footer.svg
+│   ├── logo.svg
+│   ├── proyectos/ *más adelante
+│   └── juegos/ *más adelante
+│
+└── proyectos/
+    │
+    ├── birhday-agenda/
+    │   ├── index.html
+    │   ├── css/
+    │   │   └── style.css
+    │   └── js/
+    │       └── script.js
+
+    ├── calculadora/
+    │   ├── index.html
+    │   ├── css/
+    │   │   └── style.css
+    │   └── js/
+    │       └── script.js
+    │
+    ├── calendar/
+    │   ├── index.html
+    │   ├── css/
+    │   │   └── style.css
+    │   └── js/
+    │       └── script.js
+    │
+    ├── chatbot/
+    │   ├── index.html
+    │   ├── css/
+    │   │   └── style.css
+    │   └── js/
+    │       └── script.js
+    │
+    ├── conversor-de-monedas/
+    │   ├── index.html
+    │   ├── css/
+    │   │   └── style.css
+    │   └── js/
+    │       └── script.js
+    │
+    ├── habit-tracker/
+    │   ├── index.html
+    │   ├── css/
+    │   │   └── style.css
+    │   └── js/
+    │       └── script.js
+    │
+    ├── link-tools/
+    │   ├── index.html
+    │   ├── acercade.html
+    │   ├── privacidad.html
+    │   ├── terminos.html
+    │   ├── css/
+    │   │   └── style.css
+    │   └── js/
+    │       └── script.js
+    │
+    ├── notes-app/
+    │   ├── index.html
+    │   ├── css/
+    │   │   └── style.css
+    │   └── js/
+    │       └── script.js
+    │ 
+    ├── notes-orgnaizer/
+    │   ├── index.html
+    │   ├── css/
+    │   │   └── style.css
+    │   └── js/
+    │       └── script.js
+    │
+    ├── password-generator/
+    │   ├── index.html
+    │   ├── css/
+    │   │   └── style.css
+    │   └── js/
+    │       └── script.js
+    │
+    ├── to-do-list/
+    │   ├── index.html
+    │   ├── css/
+    │   │   └── style.css
+    │   └── js/
+    │       └── script.js
+    │
+    ├── trivia/
+    │   ├── index.html
+    │   ├── css/
+    │   │   └── style.css
+    │   └── js/
+    │       └── script.js
+    │
+    ├── weekly-planner/
+    │   ├── index.html
+    │   ├── css/
+    │   │   └── style.css
+    │   └── js/
+    │       └── script.js
+    │
+    ├── world-clock/
+    │   ├── index.html
+    │   ├── css/
+    │   │   └── style.css
+    │   └── js/
+    │       └── script.js
+    │
+    └── juegos/
+        │
+        ├── index.html (Esta es la página principal de juegos)
+        ├── css/
+        │   └── juegos.css
+        ├── js/
+        │   └── juegos.js
+        │
+        ├── snake/
+        │   ├── index.html
+        │   ├── css/
+        │   │   └── style.css
+        │   └── js/
+        │       └── script.js
+        │
+        ├── tetris/
+        │   ├── index.html
+        │   ├── css/
+        │   │   └── style.css
+        │   └── js/
+        │       └── script.js
+        │
+        ├── flappy-bird/
+        │   ├── index.html
+        │   ├── css/
+        │   │   └── style.css
+        │   └── js/
+        │       └── script.js
+        │
+        ├── memorama/
+        │   ├── index.html
+        │   ├── css/
+        │   │   └── style.css
+        │   └── js/
+        │       └── script.js
+        │
+        └── ping-pong/
+            ├── index.html
+            ├── css/
+            │   └── style.css
+            └── js/
+                └── script.js
