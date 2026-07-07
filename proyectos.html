@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio de proyectos de Isabel Sterling - Ingeniería de Software con Inteligencia Artificial" />
+  <meta name="author" content="Isabel Sterling" />
+  <title>Proyectos | Isabel Sterling</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="navbar-brand">
+        <img src="img/logo.svg" alt="Isabel Sterling" class="logo-svg" />
+        <span class="brand-text">Isabel <span class="brand-accent">Sterling</span></span>
+      </div>
+      
+      <div class="menu-toggle" id="menuToggle" aria-label="Menú">
+        <i class="fas fa-bars"></i>
+      </div>
+      
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="proyectos.html" class="active">Proyectos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      
+      <a href="https://wa.me/51953870664" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ========== HEADER DE PROYECTOS ========== -->
+    <section class="projects-header" data-aos="fade-up">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Mi trabajo</span>
+          <h1>Mis <span class="gradient-text">Proyectos</span></h1>
+          <p>Una colección de mis desarrollos web, aplicaciones interactivas y proyectos de IA</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FILTROS ========== -->
+    <section class="filters-section" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
+        <div class="filters-container">
+          <button class="filter-btn active" data-filter="all">📋 Todos</button>
+          <button class="filter-btn" data-filter="javascript">⚙️ JavaScript</button>
+          <button class="filter-btn" data-filter="productividad">📊 Productividad</button>
+          <button class="filter-btn" data-filter="ia">🤖 Inteligencia Artificial</button>
+          <button class="filter-btn" data-filter="python">🐍 Python</button>
+          <button class="filter-btn" data-filter="herramientas">🛠️ Herramientas</button>
+          <button class="filter-btn" data-filter="juegos">🎮 Juegos</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROYECTOS JAVASCRIPT ========== -->
+    <section class="projects-section" data-aos="fade-up" data-aos-delay="150">
+      <div class="container">
+        
+        <!-- JavaScript -->
+        <div class="category-wrapper" data-category="javascript">
+          <div class="category-header">
+            <h2><i class="fab fa-js"></i> Proyectos con JavaScript</h2>
+            <p>Aplicaciones interactivas con lógica de programación y manipulación del DOM</p>
+          </div>
+          <div class="projects-grid">
+            
+            <!-- Calculadora Básica -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="project-icon">
+                <i class="fas fa-calculator"></i>
+              </div>
+              <h3>Calculadora Básica</h3>
+              <p>Calculadora funcional que realiza operaciones matemáticas básicas: suma, resta, multiplicación y división con interfaz amigable.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/calculadora/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+              </div>
+            </div>
+
+            <!-- Conversor de Monedas -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="250">
+              <div class="project-icon">
+                <i class="fas fa-exchange-alt"></i>
+              </div>
+              <h3>Conversor de Monedas</h3>
+              <p>Aplicación que convierte múltiples monedas en tiempo real con historial, favoritos, gráfico de tendencias y modo oscuro/claro.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">API</span>
+                <span class="tech-tag">Chart.js</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/conversor-de-monedas/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+              </div>
+            </div>
+
+            <!-- Reloj Mundial -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+              <div class="project-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <h3>Reloj Mundial</h3>
+              <p>Aplicación que muestra la hora en distintas ciudades usando objetos Date y actualización automática de la interfaz. Ideal para saber cuándo llamar a amigos en otros países.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Date API</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/world-clock/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+              </div>
+            </div>
+
+            <!-- Trivia Interactiva -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="350">
+              <div class="project-icon">
+                <i class="fas fa-question-circle"></i>
+              </div>
+              <h3>Trivia Interactiva</h3>
+              <p>Aplicación de preguntas y respuestas con múltiples modos de dificultad, categorías, puntaje acumulado, temporizador y estadísticas detalladas.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Canvas API</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/trivia/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+              </div>
+            </div>
+
+            <!-- Notas con LocalStorage -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+              <div class="project-icon">
+                <i class="fas fa-save"></i>
+              </div>
+              <h3>Notas con LocalStorage</h3>
+              <p>Aplicación completa de notas con CRUD, categorías, búsqueda, notas fijadas, persistencia y exportación/importación de datos.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">localStorage</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/notes-app/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+              </div>
+            </div>
+
+            <!-- Agenda / Calendario -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="450">
+              <div class="project-icon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <h3>Agenda / Calendario</h3>
+              <p>Calendario interactivo con eventos, recordatorios, arrastrar y soltar, y persistencia en localStorage. Vista mensual/semanal/diaria.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">localStorage</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/calendar/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+              </div>
+            </div>
+
+            <!-- Generador de Contraseñas (JS) -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="500">
+              <div class="project-icon">
+                <i class="fas fa-key"></i>
+              </div>
+              <h3>Generador de Contraseñas</h3>
+              <p>Generador de contraseñas seguras con personalización de longitud, caracteres y análisis de entropía en tiempo real.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/password-generator/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ========== PRODUCTIVIDAD ========== -->
+        <div class="category-wrapper" data-category="productividad">
+          <div class="category-header">
+            <h2><i class="fas fa-chart-line"></i> Herramientas de Productividad</h2>
+            <p>Aplicaciones para organizar tu día a día</p>
+          </div>
+          <div class="projects-grid">
+
+            <!-- Lista de Tareas -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="project-icon">
+                <i class="fas fa-check-square"></i>
+              </div>
+              <h3>Lista de Tareas</h3>
+              <p>Aplicación interactiva que permite agregar, marcar como completadas y eliminar tareas. Practica manipulación del DOM y manejo de eventos.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">DOM</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/to-do-list/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+              </div>
+            </div>
+
+            <!-- Administrador de Hábitos -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="250">
+              <div class="project-icon">
+                <i class="fas fa-check-double"></i>
+              </div>
+              <h3>Administrador de Hábitos</h3>
+              <p>Registra y sigue tus hábitos diarios con rachas, categorías y estadísticas. Perfecto para mantener consistencia.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">localStorage</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/habit-tracker/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+              </div>
+            </div>
+
+            <!-- Planificador Semanal -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+              <div class="project-icon">
+                <i class="fas fa-calendar-week"></i>
+              </div>
+              <h3>Planificador Semanal</h3>
+              <p>Organiza tus tareas por día de la semana con drag & drop, prioridades, horarios y persistencia en localStorage.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Drag & Drop</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/weekly-planner/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+              </div>
+            </div>
+
+            <!-- Organizador de Apuntes -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="350">
+              <div class="project-icon">
+                <i class="fas fa-sticky-note"></i>
+              </div>
+              <h3>Organizador de Apuntes</h3>
+              <p>Toma y organiza tus notas con categorías, etiquetas, búsqueda y colores personalizables. Ideal para estudiantes.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">localStorage</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/notes-organizer/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+              </div>
+            </div>
+
+            <!-- Agenda de Cumpleaños -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+              <div class="project-icon">
+                <i class="fas fa-birthday-cake"></i>
+              </div>
+              <h3>Agenda de Cumpleaños</h3>
+              <p>Guarda y gestiona cumpleaños con recordatorios, filtros por mes, notificaciones y organización por fechas.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">localStorage</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/birthday-agenda/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ========== INTELIGENCIA ARTIFICIAL ========== -->
+        <div class="category-wrapper" data-category="ia">
+          <div class="category-header">
+            <h2><i class="fas fa-brain"></i> Inteligencia Artificial</h2>
+            <p>Aplicaciones que utilizan NLP y Machine Learning básico</p>
+          </div>
+          <div class="projects-grid">
+            
+            <!-- Chatbot con NLP -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="project-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <h3>Chatbot con NLP</h3>
+              <p>Bot conversacional que utiliza procesamiento de lenguaje natural para reconocer intenciones y responder preguntas sobre el portafolio.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">NLP</span>
+                <span class="tech-tag">IA</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/chatbot/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Probar Chatbot</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== PYTHON ========== -->
+        <div class="category-wrapper" data-category="python">
+          <div class="category-header">
+            <h2><i class="fab fa-python"></i> Proyectos con Python</h2>
+            <p>Desarrollos en backend, automatización y lógica de programación</p>
+          </div>
+          <div class="projects-grid">
+            
+            <!-- Generador de Contraseñas (Python) -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="project-icon">
+                <i class="fas fa-key"></i>
+              </div>
+              <h3>Generador de Contraseñas (Python)</h3>
+              <p>Programa que genera contraseñas aleatorias seguras usando librerías random y string de Python. Incluye cálculo de entropía y análisis de seguridad.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Random</span>
+                <span class="tech-tag">Seguridad</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/password-generator/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ========== HERRAMIENTAS ========== -->
+        <div class="category-wrapper" data-category="herramientas">
+          <div class="category-header">
+            <h2><i class="fas fa-tools"></i> Herramientas Online</h2>
+            <p>Utilidades web para el día a día</p>
+          </div>
+          <div class="projects-grid">
+
+            <!-- Link Tools -->
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="project-icon">
+                <i class="fas fa-link"></i>
+              </div>
+              <h3>Link Tools</h3>
+              <p>Suite de herramientas para enlaces: acortador, generador de QR, verificador, constructor UTM y más.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">API</span>
+              </div>
+              <div class="project-links">
+                <a href="/proyectos/link-tools/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ========== JUEGOS ========== -->
+        <div class="category-wrapper" data-category="juegos">
+          <div class="category-header">
+            <h2><i class="fas fa-gamepad"></i> Videojuegos</h2>
+            <p>Colección de juegos clásicos desarrollados con HTML5 Canvas y JavaScript</p>
+          </div>
+          <div class="games-showcase">
+            <div class="games-info">
+              <div class="games-icon">
+                <i class="fas fa-gamepad"></i>
+              </div>
+              <div class="games-description">
+                <h3>🎮 Sector de Videojuegos</h3>
+                <p>Explora mi colección de juegos clásicos desarrollados con tecnologías web. Cada juego incluye controles táctiles, sistema de puntuación y diseño responsivo.</p>
+                <div class="games-tech">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Canvas API</span>
+                  <span class="tech-tag">DOM</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="games-list">
+              <div class="game-badge">
+                <span class="game-icon">🐍</span>
+                <span class="game-name">Snake</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">🧩</span>
+                <span class="game-name">Tetris</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">🐦</span>
+                <span class="game-name">Flappy Bird</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">🎴</span>
+                <span class="game-name">Memorama</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">🏓</span>
+                <span class="game-name">Ping Pong</span>
+              </div>
+            </div>
+
+            <a href="/proyectos/juegos/index.html" class="btn-games" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-play"></i> Ver todos los juegos
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="cta" data-aos="fade-up">
+      <div class="container">
+        <div class="cta-content">
+          <h2>¿Te interesa <span class="gradient-text">colaborar</span> conmigo?</h2>
+          <p>Estoy abierta a nuevos proyectos, pasantías y oportunidades de aprendizaje.</p>
+          <a href="contacto.html" class="btn btn-primary btn-large">
+            <i class="fas fa-comment-dots"></i> Hablemos
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="img/logo-footer.svg" alt="Isabel Sterling" class="logo-svg-footer" />
+          <span>Isabel Sterling</span>
+        </div>
+        <p>Estudiante de Ingeniería de Software con IA, creando soluciones tecnológicas innovadoras.</p>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Enlaces rápidos</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Contacto</h3>
+        <p>
+          <i class="fas fa-envelope"></i> 
+          <a href="mailto:1663551@senati.pe?subject=Contacto%20desde%20tu%20portafolio&body=Hola%20Isabel%2C%20me%20gustaría%20contactarte%20para%20..." target="_blank" rel="noopener noreferrer">
+            1663551@senati.pe
+          </a>
+        </p>
+        <p>
+          <i class="fab fa-whatsapp"></i> 
+          <a href="https://wa.me/51953870664?text=Hola%20Isabel%2C%20vi%20tu%20portafolio%20y%20me%20gust%C3%B3%20tu%20trabajo.%20%C2%BFTe%20parece%20bien%20si%20conversamos%20sobre%20una%20idea%20que%20tengo%3F" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style="color: #25D366;">
+            953 870 664
+          </a>
+        </p>
+        <p>
+          <i class="fas fa-map-marker-alt"></i> 
+          <a href="https://www.google.com/maps/place/Arequipa,+Peru/@-16.398822,-71.566829,12z/" 
+            target="_blank" 
+            rel="noopener noreferrer">
+            Arequipa, Perú
+          </a>
+        </p>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Redes Sociales</h3>
+        <div class="social-links">
+          <a href="https://www.facebook.com/isabelsterlingg" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/isabelsterlingg/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/isabel-sterling-9995793b3/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/isabelsterling" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+          <a href="https://www.youtube.com/@isabelsterlingg" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Isabel Sterling - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
