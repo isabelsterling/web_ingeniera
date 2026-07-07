@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Organizador de Apuntes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <a href="../../proyectos.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Volver a Proyectos
+        </a>
+
+        <div class="app-card">
+            <!-- Header -->
+            <div class="app-header">
+                <div class="header-icon">
+                    <i class="fas fa-sticky-note"></i>
+                </div>
+                <div class="header-text">
+                    <h1>Organizador de <span class="gradient-text">Apuntes</span></h1>
+                    <p>Toma y organiza tus notas fácilmente</p>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalNotes">0</span>
+                        <span class="stat-label">Notas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalCategories">0</span>
+                        <span class="stat-label">Categorías</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barra de acciones -->
+            <div class="actions-bar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar apuntes...">
+                </div>
+                <button class="new-note-btn" id="newNoteBtn">
+                    <i class="fas fa-plus"></i> Nueva Nota
+                </button>
+            </div>
+
+            <!-- Vista: Grid o Lista -->
+            <div class="view-toggle">
+                <button class="view-btn active" data-view="grid">
+                    <i class="fas fa-th"></i> Grid
+                </button>
+                <button class="view-btn" data-view="list">
+                    <i class="fas fa-list"></i> Lista
+                </button>
+            </div>
+
+            <!-- Grid de notas -->
+            <div class="notes-container">
+                <div class="notes-grid" id="notesGrid">
+                    <!-- Generado por JS -->
+                </div>
+            </div>
+
+            <!-- Modal para crear/editar nota -->
+            <div class="modal" id="noteModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="modalTitle">Nueva Nota</h3>
+                        <button class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label><i class="fas fa-tag"></i> Título</label>
+                            <input type="text" id="noteTitle" placeholder="Título de la nota" maxlength="100">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-align-left"></i> Contenido</label>
+                            <textarea id="noteContent" placeholder="Escribe tu apunte aquí..." rows="6"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-folder"></i> Categoría</label>
+                            <div class="category-input-group">
+                                <select id="noteCategory">
+                                    <option value="general">📋 General</option>
+                                    <option value="trabajo">💼 Trabajo</option>
+                                    <option value="estudio">📚 Estudio</option>
+                                    <option value="personal">👤 Personal</option>
+                                    <option value="ideas">💡 Ideas</option>
+                                    <option value="proyectos">🚀 Proyectos</option>
+                                </select>
+                                <input type="text" id="newCategoryInput" placeholder="Nueva categoría..." maxlength="20">
+                                <button class="add-category-btn" id="addCategoryBtn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-tags"></i> Etiquetas</label>
+                            <div class="tags-input">
+                                <input type="text" id="tagInput" placeholder="Escribe una etiqueta y presiona Enter" maxlength="15">
+                                <div class="tags-container" id="tagsContainer"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-palette"></i> Color</label>
+                            <div class="color-options">
+                                <button class="color-btn active" data-color="#6C63FF" style="background: #6C63FF;"></button>
+                                <button class="color-btn" data-color="#FF6584" style="background: #FF6584;"></button>
+                                <button class="color-btn" data-color="#28A745" style="background: #28A745;"></button>
+                                <button class="color-btn" data-color="#FFC107" style="background: #FFC107;"></button>
+                                <button class="color-btn" data-color="#17A2B8" style="background: #17A2B8;"></button>
+                                <button class="color-btn" data-color="#6F42C1" style="background: #6F42C1;"></button>
+                                <button class="color-btn" data-color="#FD7E14" style="background: #FD7E14;"></button>
+                                <button class="color-btn" data-color="#E83E8C" style="background: #E83E8C;"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="cancel-btn">Cancelar</button>
+                        <button class="delete-note-btn" id="deleteNoteBtn" style="display: none;">
+                            <i class="fas fa-trash-alt"></i> Eliminar
+                        </button>
+                        <button class="save-btn" id="saveNoteBtn">
+                            <i class="fas fa-save"></i> Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal de confirmación -->
+            <div class="modal" id="confirmModal">
+                <div class="modal-content small">
+                    <div class="modal-header">
+                        <h3>Confirmar</h3>
+                        <button class="close-confirm">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="confirmMessage">¿Estás seguro de eliminar esta nota?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="cancel-confirm">Cancelar</button>
+                        <button class="confirm-delete">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="app-footer">
+                <p>
+                    <i class="fas fa-info-circle"></i>
+                    Tus apuntes se guardan automáticamente en tu navegador. Organiza por categorías y etiquetas.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

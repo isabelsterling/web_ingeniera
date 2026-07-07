@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>🎴 Memorama - Juego</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-wrapper">
+        <!-- Botón para volver -->
+        <a href="../../juegos/index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Volver a Juegos
+        </a>
+
+        <div class="game-container">
+            <!-- Header del juego -->
+            <div class="game-header">
+                <div class="game-title">
+                    <div class="title-icon">🎴</div>
+                    <div>
+                        <h1>Memorama</h1>
+                        <p class="subtitle">Encuentra todas las parejas</p>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button class="control-btn" id="restartBtn" title="Reiniciar">
+                        <i class="fas fa-redo-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="game-stats">
+                <div class="stat-box">
+                    <span class="stat-label">🎯 Parejas</span>
+                    <span class="stat-value" id="pairsFound">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">👆 Intentos</span>
+                    <span class="stat-value" id="attempts">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">⏱️ Tiempo</span>
+                    <span class="stat-value" id="timerDisplay">00:00</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">🏅 Mejor</span>
+                    <span class="stat-value" id="highScore">0</span>
+                </div>
+            </div>
+
+            <!-- Selector de dificultad -->
+            <div class="difficulty-selector">
+                <button class="diff-btn active" data-size="4">4x4 (Fácil)</button>
+                <button class="diff-btn" data-size="6">6x6 (Media)</button>
+                <button class="diff-btn" data-size="8">8x8 (Difícil)</button>
+            </div>
+
+            <!-- Tablero -->
+            <div class="board-wrapper">
+                <div class="board" id="board">
+                    <!-- Las cartas se generan con JS -->
+                </div>
+            </div>
+
+            <!-- Overlay de victoria -->
+            <div class="victory-overlay" id="victoryOverlay" style="display: none;">
+                <div class="victory-content">
+                    <i class="fas fa-trophy"></i>
+                    <h2>🎉 ¡Ganaste!</h2>
+                    <p>Encontraste todas las parejas</p>
+                    <div class="victory-stats">
+                        <div class="victory-stat">
+                            <span>Intentos</span>
+                            <strong id="victoryAttempts">0</strong>
+                        </div>
+                        <div class="victory-stat">
+                            <span>Tiempo</span>
+                            <strong id="victoryTime">00:00</strong>
+                        </div>
+                    </div>
+                    <button class="play-again-btn" id="playAgainBtn">
+                        <i class="fas fa-redo-alt"></i> Jugar de nuevo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Controles de teclado info -->
+            <div class="controls-info">
+                <div class="key-group">
+                    <span class="key-label">Controles:</span>
+                    <kbd>Click</kbd> <span class="key-text">Seleccionar carta</span>
+                    <span class="key-separator">|</span>
+                    <kbd>R</kbd> <span class="key-text">Reiniciar</span>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="game-footer">
+                <p>
+                    <i class="fas fa-info-circle"></i>
+                    Encuentra las parejas de emojis. ¡Usa tu memoria!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
