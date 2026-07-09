@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>✊ Piedra, Papel o Tijera</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-wrapper">
+        <!-- Botón para volver -->
+        <a href="../../juegos/index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Volver a Juegos
+        </a>
+
+        <div class="game-container">
+            <!-- Header -->
+            <div class="game-header">
+                <div class="game-title">
+                    <div class="title-icon">✊</div>
+                    <div>
+                        <h1>Piedra, Papel o Tijera</h1>
+                        <p class="subtitle">El clásico juego de manos</p>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button class="control-btn" id="resetBtn" title="Reiniciar">
+                        <i class="fas fa-redo-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Marcador -->
+            <div class="scoreboard">
+                <div class="score-box">
+                    <span class="score-label">👤 Tú</span>
+                    <span class="score-value" id="playerScore">0</span>
+                </div>
+                <div class="score-divider">⚡</div>
+                <div class="score-box">
+                    <span class="score-label">🤖 IA</span>
+                    <span class="score-value" id="computerScore">0</span>
+                </div>
+                <div class="score-box draws">
+                    <span class="score-label">🤝 Empates</span>
+                    <span class="score-value" id="draws">0</span>
+                </div>
+            </div>
+
+            <!-- Área de juego -->
+            <div class="game-area">
+                <!-- Elección de la IA -->
+                <div class="choice-display computer-choice">
+                    <span class="choice-label">🤖 IA eligió</span>
+                    <div class="choice-icon" id="computerChoice">❓</div>
+                </div>
+
+                <!-- VS -->
+                <div class="vs-display">
+                    <span class="vs-text">VS</span>
+                    <div class="result-display" id="resultDisplay">
+                        <span class="result-text">Elige tu jugada</span>
+                    </div>
+                </div>
+
+                <!-- Elección del jugador -->
+                <div class="choice-display player-choice">
+                    <span class="choice-label">👤 Tú elegiste</span>
+                    <div class="choice-icon" id="playerChoice">❓</div>
+                </div>
+            </div>
+
+            <!-- Botones de elección -->
+            <div class="choices">
+                <button class="choice-btn" data-choice="piedra">
+                    <span class="choice-emoji">✊</span>
+                    <span class="choice-name">Piedra</span>
+                </button>
+                <button class="choice-btn" data-choice="papel">
+                    <span class="choice-emoji">✋</span>
+                    <span class="choice-name">Papel</span>
+                </button>
+                <button class="choice-btn" data-choice="tijera">
+                    <span class="choice-emoji">✌️</span>
+                    <span class="choice-name">Tijera</span>
+                </button>
+            </div>
+
+            <!-- Historial de partidas -->
+            <div class="history-section">
+                <div class="history-header">
+                    <h3><i class="fas fa-clock"></i> Historial de partidas</h3>
+                    <button class="clear-history-btn" id="clearHistoryBtn">
+                        <i class="fas fa-trash-alt"></i> Limpiar
+                    </button>
+                </div>
+                <div class="history-list" id="historyList">
+                    <div class="empty-history">
+                        <i class="fas fa-hourglass-start"></i>
+                        <p>No hay partidas jugadas aún</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estadísticas -->
+            <div class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number" id="winRate">0%</span>
+                        <span class="stat-label">🏆 Tasa de victoria</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="totalGames">0</span>
+                        <span class="stat-label">📊 Total partidas</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="currentStreak">0</span>
+                        <span class="stat-label">🔥 Racha actual</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="game-footer">
+                <p>
+                    <i class="fas fa-info-circle"></i>
+                    Piedra vence a tijera, tijera vence a papel, papel vence a piedra.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>🧱 Breakout | Isabel Sterling</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-wrapper">
+        <!-- Botón para volver -->
+        <a href="../../juegos/index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Volver a Juegos
+        </a>
+
+        <div class="game-container">
+            <!-- Header -->
+            <div class="game-header">
+                <div class="game-title">
+                    <div class="title-icon">🧱</div>
+                    <div>
+                        <h1>Breakout</h1>
+                        <p class="subtitle">Rompe todos los ladrillos</p>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button class="control-btn" id="pauseBtn" title="Pausa">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                    <button class="control-btn" id="restartBtn" title="Reiniciar">
+                        <i class="fas fa-redo-alt"></i>
+                    </button>
+                    <button class="control-btn" id="fullscreenBtn" title="Pantalla completa">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="game-stats">
+                <div class="stat-box">
+                    <span class="stat-label">🏆 Puntaje</span>
+                    <span class="stat-value" id="score">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">📊 Nivel</span>
+                    <span class="stat-value" id="level">1</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">❤️ Vidas</span>
+                    <span class="stat-value" id="lives">3</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">🏅 Mejor</span>
+                    <span class="stat-value" id="highScore">0</span>
+                </div>
+            </div>
+
+            <!-- Canvas del juego -->
+            <div class="canvas-wrapper">
+                <canvas id="gameCanvas" width="800" height="500"></canvas>
+                
+                <!-- Overlay de inicio -->
+                <div class="game-overlay" id="startOverlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-gamepad"></i>
+                        <h2>🧱 Breakout</h2>
+                        <p>Rompe todos los ladrillos con la pelota</p>
+                        <div class="controls-hint">
+                            <kbd>←</kbd> <kbd>→</kbd> <span class="key-text">Mover paleta</span>
+                            <span class="key-separator">|</span>
+                            <kbd>Espacio</kbd> <span class="key-text">Lanzar / Pausa</span>
+                        </div>
+                        <button class="play-btn" id="startBtn">
+                            <i class="fas fa-play"></i> Jugar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Overlay de pausa -->
+                <div class="game-overlay" id="pauseOverlay" style="display: none;">
+                    <div class="overlay-content">
+                        <i class="fas fa-pause-circle"></i>
+                        <h2>Pausa</h2>
+                        <p>Presiona <kbd>Espacio</kbd> para continuar</p>
+                    </div>
+                </div>
+
+                <!-- Overlay de game over -->
+                <div class="game-overlay" id="gameOverOverlay" style="display: none;">
+                    <div class="overlay-content">
+                        <i class="fas fa-skull"></i>
+                        <h2>¡Game Over!</h2>
+                        <p>Puntaje: <span id="finalScore">0</span></p>
+                        <p>Nivel: <span id="finalLevel">1</span></p>
+                        <button class="play-again-btn" id="playAgainBtn">
+                            <i class="fas fa-redo-alt"></i> Jugar de nuevo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Overlay de victoria -->
+                <div class="game-overlay" id="victoryOverlay" style="display: none;">
+                    <div class="overlay-content">
+                        <i class="fas fa-trophy"></i>
+                        <h2>🎉 ¡Ganaste!</h2>
+                        <p>Puntaje: <span id="victoryScore">0</span></p>
+                        <p>Nivel: <span id="victoryLevel">1</span></p>
+                        <button class="play-again-btn" id="nextLevelBtn">
+                            <i class="fas fa-arrow-right"></i> Siguiente nivel
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles táctiles (móvil) -->
+            <div class="touch-controls">
+                <div class="touch-row">
+                    <button class="touch-btn" id="touchLeft">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="touch-btn" id="touchLaunch">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="touch-btn" id="touchRight">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Controles de teclado info -->
+            <div class="controls-info">
+                <div class="key-group">
+                    <span class="key-label">Mover:</span>
+                    <kbd>←</kbd> <kbd>→</kbd>
+                    <span class="key-separator">o</span>
+                    <kbd>A</kbd> <kbd>D</kbd>
+                </div>
+                <div class="key-group">
+                    <span class="key-label">Lanzar/Pausa:</span>
+                    <kbd>Espacio</kbd>
+                </div>
+                <div class="key-group">
+                    <span class="key-label">Reiniciar:</span>
+                    <kbd>R</kbd>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="game-footer">
+                <p>
+                    <i class="fas fa-info-circle"></i>
+                    Rompe todos los ladrillos para avanzar de nivel. ¡No dejes caer la pelota!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

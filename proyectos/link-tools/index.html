@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LinkKit — Acorta & Genera QR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <h1>LINK<span>KIT</span></h1>
+      <p>Tus herramientas de enlace // v2.0</p>
+    </div>
+    <div class="header-badge">9 herramientas</div>
+  </header>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-btn active" id="tab-short" onclick="switchTab('shortener')">
+      <span class="icon">✂️</span> Acortar
+    </button>
+    <button class="tab-btn" id="tab-qr" onclick="switchTab('qr')">
+      <span class="icon">⬛</span> QR Gen
+    </button>
+    <button class="tab-btn" id="tab-unshort" onclick="switchTab('unshortener')">
+      <span class="icon">↩️</span> Expandir
+    </button>
+    <button class="tab-btn" id="tab-check" onclick="switchTab('linkcheck')">
+      <span class="icon">✅</span> Verificar
+    </button>
+    <button class="tab-btn" id="tab-og" onclick="switchTab('ogpreview')">
+      <span class="icon">👁️</span> Preview
+    </button>
+    <button class="tab-btn" id="tab-utm" onclick="switchTab('utm')">
+      <span class="icon">📊</span> UTM
+    </button>
+    <button class="tab-btn" id="tab-encode" onclick="switchTab('encoder')">
+      <span class="icon">🔤</span> Codificar
+    </button>
+    <button class="tab-btn" id="tab-clean" onclick="switchTab('cleaner')">
+      <span class="icon">🧹</span> Limpiar
+    </button>
+    <button class="tab-btn" id="tab-read" onclick="switchTab('qrreader')">
+      <span class="icon">📷</span> Leer QR
+    </button>
+  </div>
+
+  <!-- PANEL 1: ACORTADOR -->
+  <div class="panel active" id="panel-shortener">
+    <div class="card">
+      <div class="card-title">✂️ Acortar Enlace</div>
+      <div class="card-subtitle">Pega tu URL larga · obtén un enlace corto al instante</div>
+
+      <div class="input-group">
+        <input class="url-input" id="short-input" type="url" placeholder="https://tu-enlace-muy-largo.com/aqui..." autocomplete="off"/>
+        <button class="btn btn-orange" id="short-btn" onclick="shortenURL()">Acortar →</button>
+      </div>
+
+      <div class="loader" id="short-loader">
+        <div class="dots"><span></span><span></span><span></span></div>
+        Acortando enlace...
+      </div>
+
+      <div class="error-msg" id="short-error"></div>
+
+      <div class="result-box" id="short-result">
+        <div class="result-content">
+          <div class="result-label">Tu enlace corto</div>
+          <div class="result-url" id="short-url"></div>
+        </div>
+        <button class="btn-copy" id="copy-btn" onclick="copyURL()">Copiar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 2: GENERADOR QR -->
+  <div class="panel" id="panel-qr">
+    <div class="card">
+      <div class="card-title">⬛ Generar Código QR</div>
+      <div class="card-subtitle">Convierte cualquier enlace o texto en un código QR</div>
+
+      <div class="input-group">
+        <input class="url-input" id="qr-input" type="text" placeholder="https://tu-enlace.com o cualquier texto..." autocomplete="off"/>
+        <button class="btn btn-teal" id="qr-btn" onclick="generateQR()">Generar →</button>
+      </div>
+
+      <div class="size-group">
+        <label>Tamaño:</label>
+        <div class="size-btns">
+          <button class="size-btn" onclick="setSize(this, 160)">S</button>
+          <button class="size-btn active" onclick="setSize(this, 220)">M</button>
+          <button class="size-btn" onclick="setSize(this, 300)">L</button>
+        </div>
+      </div>
+
+      <div class="error-msg" id="qr-error"></div>
+
+      <div class="qr-result" id="qr-result">
+        <div class="qr-frame">
+          <div id="qr-container"></div>
+        </div>
+        <div class="qr-url-label">Contenido codificado</div>
+        <div class="qr-url-text" id="qr-url-text"></div>
+        <div class="qr-actions">
+          <button class="btn btn-teal" onclick="downloadQR()">⬇ Descargar PNG</button>
+          <button class="btn btn-ghost" onclick="clearQR()">Limpiar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 3: EXPANSOR DE ENLACES -->
+  <div class="panel" id="panel-unshortener">
+    <div class="card">
+      <div class="card-title">↩️ Expansor de Enlaces</div>
+      <div class="card-subtitle">Descubre la URL real detrás de un enlace acortado</div>
+
+      <div class="input-group">
+        <input class="url-input" id="unshort-input" type="url" placeholder="https://bit.ly/3x... o goo.gl/..." autocomplete="off"/>
+        <button class="btn btn-purple" id="unshort-btn" onclick="unshortenURL()">Expandir →</button>
+      </div>
+
+      <div class="loader" id="unshort-loader">
+        <div class="dots"><span></span><span></span><span></span></div>
+        Siguiendo redirecciones...
+      </div>
+
+      <div class="error-msg" id="unshort-error"></div>
+
+      <div class="result-box" id="unshort-result">
+        <div class="result-content">
+          <div class="result-label">URL Destino Final</div>
+          <div class="result-url" id="unshort-url"></div>
+        </div>
+        <button class="btn-copy" onclick="copyURL('unshort-url')">Copiar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 4: VERIFICADOR DE ENLACES -->
+  <div class="panel" id="panel-linkcheck">
+    <div class="card">
+      <div class="card-title">✅ Verificar Enlace</div>
+      <div class="card-subtitle">Comprueba si un enlace está activo o roto</div>
+
+      <div class="input-group">
+        <input class="url-input" id="check-input" type="url" placeholder="https://tu-enlace.com" autocomplete="off"/>
+        <button class="btn btn-green" id="check-btn" onclick="checkLink()">Verificar →</button>
+      </div>
+
+      <div class="loader" id="check-loader">
+        <div class="dots"><span></span><span></span><span></span></div>
+        Verificando estado...
+      </div>
+
+      <div class="error-msg" id="check-error"></div>
+
+      <div class="result-box" id="check-result">
+        <div class="check-status">
+          <div class="status-icon" id="status-icon"></div>
+          <div class="status-info">
+            <div class="status-code" id="status-code">—</div>
+            <div class="status-text" id="status-text">Sin verificar</div>
+          </div>
+        </div>
+        <div class="check-details" id="check-details"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 5: VISTA PREVIA OPEN GRAPH -->
+  <div class="panel" id="panel-ogpreview">
+    <div class="card">
+      <div class="card-title">👁️ Preview Redes Sociales</div>
+      <div class="card-subtitle">Simula cómo se verá tu enlace al compartirlo</div>
+
+      <div class="input-group">
+        <input class="url-input" id="og-input" type="url" placeholder="https://tu-sitio.com/articulo" autocomplete="off"/>
+        <button class="btn btn-blue" id="og-btn" onclick="fetchOG()">Cargar Preview →</button>
+      </div>
+
+      <div class="loader" id="og-loader">
+        <div class="dots"><span></span><span></span><span></span></div>
+        Obteniendo datos Open Graph...
+      </div>
+
+      <div class="error-msg" id="og-error"></div>
+
+      <div class="og-preview" id="og-preview">
+        <!-- Preview estilo Twitter/X -->
+        <div class="og-card twitter">
+          <div class="og-card-title">Vista previa Twitter/X</div>
+          <div class="og-image" id="og-image"></div>
+          <div class="og-content">
+            <div class="og-site" id="og-site"></div>
+            <div class="og-title" id="og-title"></div>
+            <div class="og-desc" id="og-desc"></div>
+          </div>
+        </div>
+
+        <!-- Preview estilo WhatsApp -->
+        <div class="og-card whatsapp">
+          <div class="og-card-title">Vista previa WhatsApp / Slack</div>
+          <div class="og-image" id="og-image-wa"></div>
+          <div class="og-content">
+            <div class="og-title" id="og-title-wa"></div>
+            <div class="og-desc" id="og-desc-wa"></div>
+          </div>
+        </div>
+
+        <div class="qr-actions">
+          <button class="btn btn-ghost" onclick="clearOG()">Limpiar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 6: CONSTRUCTOR UTM -->
+  <div class="panel" id="panel-utm">
+    <div class="card">
+      <div class="card-title">📊 Constructor UTM</div>
+      <div class="card-subtitle">Crea URLs con parámetros de seguimiento para Analytics</div>
+
+      <div class="utm-form">
+        <div class="input-group">
+          <label>URL del sitio web</label>
+          <input class="url-input" id="utm-base" type="url" placeholder="https://tu-sitio.com/pagina" autocomplete="off"/>
+        </div>
+
+        <div class="utm-fields">
+          <div class="input-row">
+            <div class="input-group half">
+              <label>utm_source *</label>
+              <input class="url-input" id="utm-source" type="text" placeholder="google, newsletter, facebook"/>
+            </div>
+            <div class="input-group half">
+              <label>utm_medium *</label>
+              <input class="url-input" id="utm-medium" type="text" placeholder="cpc, email, social"/>
+            </div>
+          </div>
+          <div class="input-row">
+            <div class="input-group half">
+              <label>utm_campaign</label>
+              <input class="url-input" id="utm-campaign" type="text" placeholder="spring_sale, launch"/>
+            </div>
+            <div class="input-group half">
+              <label>utm_content</label>
+              <input class="url-input" id="utm-content" type="text" placeholder="banner_top, link_1"/>
+            </div>
+          </div>
+          <div class="input-group">
+            <label>utm_term (opcional)</label>
+            <input class="url-input" id="utm-term" type="text" placeholder="palabras_clave"/>
+          </div>
+        </div>
+
+        <button class="btn btn-orange" id="utm-btn" onclick="buildUTM()">Generar URL UTM</button>
+      </div>
+
+      <div class="error-msg" id="utm-error"></div>
+
+      <div class="result-box" id="utm-result">
+        <div class="result-content">
+          <div class="result-label">Tu enlace con UTM</div>
+          <div class="result-url" id="utm-url"></div>
+        </div>
+        <button class="btn-copy" onclick="copyURL('utm-url')">Copiar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 7: CODIFICADOR/DECODIFICADOR URL -->
+  <div class="panel" id="panel-encoder">
+    <div class="card">
+      <div class="card-title">🔤 Codificador URL</div>
+      <div class="card-subtitle">Codifica o decodifica caracteres especiales para URLs</div>
+
+      <div class="encoder-grid">
+        <!-- Encoder -->
+        <div class="encoder-col">
+          <div class="encoder-title">Codificar (Encode)</div>
+          <div class="input-group">
+            <textarea class="url-input textarea" id="encode-input" placeholder="Escribe texto plano... (ej: hola mundo)"></textarea>
+          </div>
+          <button class="btn btn-teal" onclick="encodeURL()">Codificar</button>
+          <div class="result-box small" id="encode-result">
+            <div class="result-content">
+              <div class="result-url" id="encoded-result"></div>
+            </div>
+            <button class="btn-copy small" onclick="copyURL('encoded-result')">Copiar</button>
+          </div>
+        </div>
+
+        <!-- Decoder -->
+        <div class="encoder-col">
+          <div class="encoder-title">Decodificar (Decode)</div>
+          <div class="input-group">
+            <textarea class="url-input textarea" id="decode-input" placeholder="Escribe URL codificada... (ej: hola%20mundo)"></textarea>
+          </div>
+          <button class="btn btn-purple" onclick="decodeURL()">Decodificar</button>
+          <div class="result-box small" id="decode-result">
+            <div class="result-content">
+              <div class="result-url" id="decoded-result"></div>
+            </div>
+            <button class="btn-copy small" onclick="copyURL('decoded-result')">Copiar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 8: LIMPIADOR DE ENLACES -->
+  <div class="panel" id="panel-cleaner">
+    <div class="card">
+      <div class="card-title">🧹 Limpiador de Enlaces</div>
+      <div class="card-subtitle">Elimina parámetros de seguimiento y spam de las URLs</div>
+
+      <div class="input-group">
+        <textarea class="url-input textarea tall" id="clean-input" placeholder="Pega tu URL sucia con muchos parámetros... (ej: https://google.com?utm_source=facebook&fbclid=123abc&utm_content=banner)"></textarea>
+      </div>
+
+      <button class="btn btn-green" id="clean-btn" onclick="cleanURL()">Limpiar URL</button>
+
+      <div class="error-msg" id="clean-error"></div>
+
+      <div class="result-box" id="clean-result">
+        <div class="result-content"></div>
+          <div class="result-label">URL Limpia</div>
+          <div class="result-url" id="clean-url"></div>
+        </div>
+        <button class="btn-copy" onclick="copyURL('clean-url')">Copiar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 9: LECTOR DE CÓDIGOS QR -->
+  <div class="panel" id="panel-qrreader">
+    <div class="card">
+      <div class="card-title">📷 Leer Código QR</div>
+      <div class="card-subtitle">Sube una imagen con código QR y descubre su contenido</div>
+
+      <div class="qr-upload-area" id="qr-upload-area">
+        <input type="file" id="qr-file-input" accept="image/*" onchange="processQR(this)"/>
+        <div class="upload-placeholder">
+          <span class="upload-icon">📁</span>
+          <div class="upload-text">Arrastra una imagen o haz clic para seleccionar</div>
+          <div class="upload-hint">Formatos: PNG, JPG, GIF, WebP</div>
+        </div>
+      </div>
+
+      <div class="loader" id="qr-read-loader">
+        <div class="dots"><span></span><span></span><span></span></div>
+        Leyendo código QR...
+      </div>
+
+      <div class="error-msg" id="qr-read-error"></div>
+
+      <div class="qr-read-result" id="qr-read-result">
+        <div class="qr-read-preview">
+          <img id="qr-read-image" alt="QR escaneado"/>
+        </div>
+        <div class="qr-read-content">
+          <div class="qr-read-label">Contenido detectado</div>
+          <div class="qr-read-text" id="qr-read-text"></div>
+          <div class="qr-read-type" id="qr-read-type"></div>
+        </div>
+        <div class="qr-actions">
+          <button class="btn btn-teal" onclick="copyQRText()">Copiar Contenido</button>
+          <button class="btn btn-ghost" onclick="clearQRReader()">Limpiar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- FOOTER-->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">LINK<span>KIT</span></div>
+        <div class="footer-version">v2.0</div>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <div class="footer-title">Herramientas</div>
+          <a href="#" onclick="switchTab('shortener')">Acortar URL</a>
+          <a href="#" onclick="switchTab('qr')">Generar QR</a>
+          <a href="#" onclick="switchTab('unshortener')">Expandir</a>
+          <a href="#" onclick="switchTab('linkcheck')">Verificar</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-title">Extras</div>
+          <a href="#" onclick="switchTab('utm')">UTM Builder</a>
+          <a href="#" onclick="switchTab('encoder')">Codificar</a>
+          <a href="#" onclick="switchTab('cleaner')">Limpiar</a>
+          <a href="#" onclick="switchTab('qrreader')">Leer QR</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-title">Información</div>
+          <a href="acercade.html">Acerca de</a>
+          <a href="privacidad.html">Privacidad</a>
+          <a href="terminos.html">Términos</a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <span>© 2026 LinkKit</span>
+        <span class="footer-divider">·</span>
+        <span>9 herramientas</span>
+        <span class="footer-divider">·</span>
+        <span>Gratis &middot; Open Source</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Librerías -->
+<!-- QR Generator -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<!-- QR Reader (jsQR) -->
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+<!-- Lógica de la app -->
+<script src="js/main.js"></script>
+</body>
+</html>

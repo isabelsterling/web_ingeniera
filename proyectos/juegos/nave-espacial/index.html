@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>🚀 Nave Espacial | Isabel Sterling</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-wrapper">
+        <!-- Botón para volver -->
+        <a href="../../juegos/index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Volver a Juegos
+        </a>
+
+        <div class="game-container">
+            <!-- Header -->
+            <div class="game-header">
+                <div class="game-title">
+                    <div class="title-icon">🚀</div>
+                    <div>
+                        <h1>Nave Espacial</h1>
+                        <p class="subtitle">Destruye asteroides y sobrevive</p>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button class="control-btn" id="restartBtn" title="Reiniciar">
+                        <i class="fas fa-redo-alt"></i>
+                    </button>
+                    <button class="control-btn" id="pauseBtn" title="Pausa">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="game-stats">
+                <div class="stat-box">
+                    <span class="stat-label">🏆 Puntaje</span>
+                    <span class="stat-value" id="score">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">❤️ Vidas</span>
+                    <span class="stat-value" id="lives">3</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">💥 Asteroides</span>
+                    <span class="stat-value" id="asteroids">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">🏅 Mejor</span>
+                    <span class="stat-value" id="highScore">0</span>
+                </div>
+            </div>
+
+            <!-- Canvas del juego -->
+            <div class="canvas-wrapper">
+                <canvas id="gameCanvas" width="800" height="600"></canvas>
+                
+                <!-- Overlay de inicio -->
+                <div class="game-overlay" id="startOverlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-rocket"></i>
+                        <h2>🚀 Nave Espacial</h2>
+                        <p>Destruye asteroides y sobrevive en el espacio</p>
+                        <div class="controls-hint">
+                            <kbd>W A S D</kbd> <span class="key-text">Moverse</span>
+                            <span class="key-separator">|</span>
+                            <kbd>🖱️ Click</kbd> <span class="key-text">Disparar</span>
+                            <span class="key-separator">|</span>
+                            <kbd>Shift</kbd> <span class="key-text">Turbo</span>
+                        </div>
+                        <button class="play-btn" id="startBtn">
+                            <i class="fas fa-play"></i> Jugar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Overlay de pausa -->
+                <div class="game-overlay" id="pauseOverlay" style="display: none;">
+                    <div class="overlay-content">
+                        <i class="fas fa-pause-circle"></i>
+                        <h2>Pausa</h2>
+                        <p>Presiona <kbd>Espacio</kbd> para continuar</p>
+                    </div>
+                </div>
+
+                <!-- Overlay de game over -->
+                <div class="game-overlay" id="gameOverOverlay" style="display: none;">
+                    <div class="overlay-content">
+                        <i class="fas fa-skull"></i>
+                        <h2>¡Nave destruida!</h2>
+                        <p>Asteroides destruidos: <span id="finalAsteroids">0</span></p>
+                        <p>Puntaje: <span id="finalScore">0</span></p>
+                        <button class="play-again-btn" id="playAgainBtn">
+                            <i class="fas fa-redo-alt"></i> Jugar de nuevo
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles táctiles (móvil) -->
+            <div class="touch-controls">
+                <div class="touch-grid">
+                    <div class="touch-row">
+                        <button class="touch-btn" id="touchUp">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                    </div>
+                    <div class="touch-row">
+                        <button class="touch-btn" id="touchLeft">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="touch-btn" id="touchDown">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <button class="touch-btn" id="touchRight">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="touch-row">
+                        <button class="touch-btn shoot-btn" id="touchShoot">
+                            <i class="fas fa-crosshairs"></i> Disparar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles de teclado info -->
+            <div class="controls-info">
+                <div class="key-group">
+                    <span class="key-label">Moverse:</span>
+                    <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>
+                </div>
+                <div class="key-group">
+                    <span class="key-label">Disparar:</span>
+                    <kbd>Click</kbd>
+                </div>
+                <div class="key-group">
+                    <span class="key-label">Turbo:</span>
+                    <kbd>Shift</kbd>
+                </div>
+                <div class="key-group">
+                    <span class="key-label">Pausa:</span>
+                    <kbd>Espacio</kbd>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="game-footer">
+                <p>
+                    <i class="fas fa-info-circle"></i>
+                    Destruye asteroides para ganar puntos. Usa Shift para moverte más rápido.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

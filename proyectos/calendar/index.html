@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Agenda / Calendario | Isabel Sterling</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calendar-container">
+        <!-- Botón para volver al portafolio -->
+        <a href="../../proyectos.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Volver a Proyectos
+        </a>
+
+        <div class="calendar-card">
+            <!-- Header -->
+            <div class="calendar-header">
+                <div class="header-left">
+                    <div class="header-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="header-text">
+                        <h1>Mi <span class="gradient-text">Agenda</span></h1>
+                        <p>Organiza tus eventos y actividades</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="today-btn" id="todayBtn">
+                        <i class="fas fa-calendar-day"></i> Hoy
+                    </button>
+                    <button class="view-btn active" data-view="month">
+                        <i class="fas fa-calendar-alt"></i> Mes
+                    </button>
+                    <button class="view-btn" data-view="week">
+                        <i class="fas fa-calendar-week"></i> Semana
+                    </button>
+                    <button class="view-btn" data-view="day">
+                        <i class="fas fa-calendar-day"></i> Día
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navegación del calendario -->
+            <div class="calendar-nav">
+                <button class="nav-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <h2 id="currentDate">Enero 2025</h2>
+                <button class="nav-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Vista Mensual -->
+            <div class="view-container" id="monthView">
+                <div class="weekdays">
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Mié</div>
+                    <div>Jue</div>
+                    <div>Vie</div>
+                    <div>Sáb</div>
+                    <div>Dom</div>
+                </div>
+                <div class="days-grid" id="daysGrid">
+                    <!-- Generado por JS -->
+                </div>
+            </div>
+
+            <!-- Vista Semanal -->
+            <div class="view-container" id="weekView" style="display: none;">
+                <div class="week-grid" id="weekGrid">
+                    <!-- Generado por JS -->
+                </div>
+            </div>
+
+            <!-- Vista Diaria -->
+            <div class="view-container" id="dayView" style="display: none;">
+                <div class="day-schedule" id="daySchedule">
+                    <!-- Generado por JS -->
+                </div>
+            </div>
+
+            <!-- Lista de eventos del día -->
+            <div class="events-section">
+                <div class="events-header">
+                    <h3><i class="fas fa-list"></i> Eventos del día</h3>
+                    <button class="add-event-btn" id="addEventBtn">
+                        <i class="fas fa-plus"></i> Nuevo evento
+                    </button>
+                </div>
+                <div class="events-list" id="eventsList">
+                    <div class="empty-events">
+                        <i class="fas fa-calendar-plus"></i>
+                        <p>No hay eventos para este día</p>
+                        <span>Haz clic en "Nuevo evento" para agregar uno</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para agregar/editar evento -->
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Nuevo Evento</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label><i class="fas fa-tag"></i> Título del evento</label>
+                    <input type="text" id="eventTitle" placeholder="Ej: Reunión con equipo" maxlength="100">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-calendar-day"></i> Fecha</label>
+                    <input type="date" id="eventDate">
+                </div>
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label><i class="fas fa-clock"></i> Hora inicio</label>
+                        <input type="time" id="eventStart">
+                    </div>
+                    <div class="form-group half">
+                        <label><i class="fas fa-clock"></i> Hora fin</label>
+                        <input type="time" id="eventEnd">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-palette"></i> Color</label>
+                    <div class="color-options">
+                        <button class="color-btn active" data-color="#6C63FF" style="background: #6C63FF;"></button>
+                        <button class="color-btn" data-color="#FF6584" style="background: #FF6584;"></button>
+                        <button class="color-btn" data-color="#28A745" style="background: #28A745;"></button>
+                        <button class="color-btn" data-color="#FFC107" style="background: #FFC107;"></button>
+                        <button class="color-btn" data-color="#17A2B8" style="background: #17A2B8;"></button>
+                        <button class="color-btn" data-color="#DC3545" style="background: #DC3545;"></button>
+                        <button class="color-btn" data-color="#6F42C1" style="background: #6F42C1;"></button>
+                        <button class="color-btn" data-color="#FD7E14" style="background: #FD7E14;"></button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-align-left"></i> Descripción</label>
+                    <textarea id="eventDescription" placeholder="Descripción del evento..." rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="eventReminder">
+                        <i class="fas fa-bell"></i> Recordatorio (notificación)
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn">Cancelar</button>
+                <button class="delete-event-btn" id="deleteEventBtn" style="display: none;">
+                    <i class="fas fa-trash-alt"></i> Eliminar
+                </button>
+                <button class="save-btn" id="saveEventBtn">
+                    <i class="fas fa-save"></i> Guardar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificación de recordatorio -->
+    <div class="reminder-notification" id="reminderNotification" style="display: none;">
+        <div class="reminder-content">
+            <i class="fas fa-bell"></i>
+            <div class="reminder-info">
+                <h4 id="reminderTitle">Recordatorio</h4>
+                <p id="reminderText">Tienes un evento próximo</p>
+            </div>
+            <button class="reminder-close">&times;</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
