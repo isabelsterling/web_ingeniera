@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Términos de Uso — LinkKit</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono&family=Outfit&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      padding: 40px 20px;
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+    }
+    
+    .legal-page {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* ── HEADER CON BOTÓN VOLVER ── */
+    .legal-header-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    
+    .legal-header {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 48px;
+      color: var(--ink);
+      letter-spacing: 2px;
+    }
+    
+    .legal-header span {
+      color: var(--color-short);
+    }
+    
+    .back-to-projects {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--ink-soft);
+      font-family: 'Outfit', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: var(--transition);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    
+    .back-to-projects:hover {
+      background: var(--card);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--ink);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .back-to-projects i {
+      font-size: 13px;
+    }
+    
+    .legal-subtitle {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+    
+    .legal-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--ink-soft);
+      margin-bottom: 24px;
+    }
+    
+    .legal-content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+    
+    .legal-content h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 24px 0 12px;
+      color: var(--ink);
+    }
+    
+    .legal-content h2:first-child {
+      margin-top: 0;
+    }
+    
+    .legal-content p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+    
+    .legal-content ul {
+      margin: 12px 0;
+      padding-left: 20px;
+    }
+    
+    .legal-content li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+      list-style: none;
+      position: relative;
+      padding-left: 20px;
+    }
+    
+    .legal-content li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--color-short);
+    }
+    
+    .legal-content strong {
+      color: var(--ink);
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 13px;
+      color: var(--color-short);
+      text-decoration: none;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+    
+    .back-link:hover {
+      color: var(--color-short-d);
+      transform: translateX(-4px);
+    }
+    
+    /* ── AVISO IMPORTANTE ── */
+    .important {
+      background: rgba(245, 158, 11, 0.1);
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--color-utm);
+      margin: 0 0 20px 0;
+    }
+    
+    .important strong {
+      color: var(--color-utm);
+    }
+    
+    .important p {
+      margin: 0;
+      color: var(--ink-soft);
+    }
+    
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      body {
+        padding: 24px 16px;
+      }
+      
+      .legal-header-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .legal-header {
+        font-size: 36px;
+      }
+      
+      .back-to-projects {
+        font-size: 11px;
+        padding: 6px 12px;
+      }
+      
+      .legal-content {
+        padding: 24px 20px;
+      }
+      
+      .legal-content h2 {
+        font-size: 16px;
+      }
+      
+      .legal-content p,
+      .legal-content li {
+        font-size: 13px;
+      }
+      
+      .important {
+        padding: 12px 14px;
+        font-size: 13px;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      .legal-header {
+        font-size: 30px;
+      }
+      
+      .legal-content {
+        padding: 18px 16px;
+      }
+      
+      .back-to-projects {
+        font-size: 10px;
+        padding: 5px 10px;
+      }
+      
+      .back-to-projects i {
+        font-size: 11px;
+      }
+      
+      .important {
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="legal-page">
+    <!-- HEADER CON BOTÓN VOLVER A PROYECTOS -->
+    <div class="legal-header-wrapper">
+      <div class="legal-header">LINK<span>KIT</span></div>
+      <a href="../../proyectos.html" class="back-to-projects">
+        <i class="fas fa-arrow-left"></i> Volver a Proyectos
+      </a>
+    </div>
+    
+    <div class="legal-subtitle">Términos de Uso</div>
+    <div class="legal-date">Última actualización: Julio 2026</div>
+    
+    <div class="legal-content">
+      <div class="important">
+        <strong>📢 Aviso Importante:</strong>
+        <p>Al usar LinkKit, aceptas estos términos. Si no estás de acuerdo, por favor no utilices la aplicación.</p>
+      </div>
+
+      <h2>1. Aceptación de Términos</h2>
+      <p>Al acceder y utilizar LinkKit, aceptas estar legalmente vinculado por estos Términos de Uso. Si no aceptas estos términos, no debes utilizar este sitio web.</p>
+
+      <h2>2. Descripción del Servicio</h2>
+      <p>LinkKit es una herramienta web gratuita que proporciona utilidades para trabajar con enlaces y URLs, incluyendo pero no limitando a:</p>
+      <ul>
+        <li>Acortamiento de URLs</li>
+        <li>Generación de códigos QR</li>
+        <li>Expansión de enlaces acortados</li>
+        <li>Verificación de disponibilidad de enlaces</li>
+        <li>Vista previa de contenido Open Graph</li>
+        <li>Construcción de URLs con parámetros UTM</li>
+        <li>Codificación y decodificación de URLs</li>
+        <li>Limpieza de parámetros de seguimiento</li>
+        <li>Lectura de códigos QR desde imágenes</li>
+      </ul>
+
+      <h2>3. Uso Permitido</h2>
+      <p>Te comprometes a utilizar LinkKit únicamente para fines legítimos. Está prohibido:</p>
+      <ul>
+        <li>Utilizar la aplicación para fines ilegales o no autorizados</li>
+        <li>Intentar acceder a sistemas no autorizados</li>
+        <li>Interrumpir o intentar interrumpir el funcionamiento de la aplicación</li>
+        <li>Utilizar la aplicación de manera que pueda dañar, deshabilitar o sobrecargar los servidores</li>
+        <li>Usar robots, spiders o scrapers de manera automatizada sin autorización</li>
+        <li>Generar enlaces que dirijan a contenido malicioso o inapropiado</li>
+      </ul>
+
+      <h2>4. Responsabilidades del Usuario</h2>
+      <p>Como usuario, eres responsable de:</p>
+      <ul>
+        <li>Proporcionar información veraz y legítima al utilizar las herramientas</li>
+        <li>No utilizar la aplicación para infringir derechos de terceros</li>
+        <li>Mantener la confidencialidad de cualquier actividad realizada</li>
+        <li>Cumplir con todas las leyes aplicables en tu jurisdicción</li>
+        <li>Verificar la legalidad del contenido que compartes mediante enlaces generados</li>
+      </ul>
+
+      <h2>5. Exención de Garantías</h2>
+      <p><strong>LinkKit se proporciona "tal cual" y "según disponibilidad".</strong></p>
+      <p>No garantizamos que:</p>
+      <ul>
+        <li>El servicio esté siempre disponible o sea ininterrumpido</li>
+        <li>Los resultados sean siempre precisos o confiables</li>
+        <li>La calidad del servicio cumpla con tus expectativas</li>
+        <li>Los enlaces generados permanezcan activos indefinidamente (dependen de servicios externos)</li>
+      </ul>
+
+      <h2>6. Limitación de Responsabilidad</h2>
+      <p>En la medida máxima permitida por la ley, LinkKit no será responsable por:</p>
+      <ul>
+        <li>Daños directos, indirectos, incidentales o consecuentes</li>
+        <li>Pérdida de datos, ingresos o oportunidades de negocio</li>
+        <li>Cualquier daño derivado del uso o incapacidad de usar el servicio</li>
+        <li>Contenido al que los enlaces generados puedan dirigir</li>
+      </ul>
+
+      <h2>7. Propiedad Intelectual</h2>
+      <p>El código fuente de LinkKit está disponible bajo la licencia MIT. Esto significa que:</p>
+      <ul>
+        <li>Puedes usar, copiar, modificar y distribuir el código libremente</li>
+        <li>Debes incluir el aviso de copyright original en cualquier distribución</li>
+        <li>No hay garantías expresas o implícitas sobre el software</li>
+        <li>El nombre "LinkKit" y el logotipo son marcas del proyecto</li>
+      </ul>
+
+      <h2>8. Servicios de Terceros</h2>
+      <p>LinkKit utiliza servicios de terceros para algunas funcionalidades:</p>
+      <ul>
+        <li><strong>is.gd</strong> — Servicio de acortamiento de URLs</li>
+        <li><strong>All Origins</strong> — Proxy CORS para peticiones externas</li>
+      </ul>
+      <p>No somos responsables de la disponibilidad o políticas de estos servicios externos.</p>
+
+      <h2>9. Enlaces a Terceros</h2>
+      <p>LinkKit puede contener enlaces a sitios web de terceros. No somos responsables del contenido o prácticas de privacidad de estos sitios. Te recomendamos revisar sus políticas antes de usarlos.</p>
+
+      <h2>10. Terminación</h2>
+      <p>Nos reservamos el derecho de terminar o suspender el acceso a cualquier usuario que incumpla estos términos, sin previo aviso. Esto incluye el uso abusivo o malintencionado de la aplicación.</p>
+
+      <h2>11. Modificaciones</h2>
+      <p>Podemos actualizar estos términos periódicamente. La versión más reciente estará siempre disponible en esta página. El uso continuado del servicio después de los cambios constituye tu aceptación de los nuevos términos.</p>
+
+      <h2>12. Ley Aplicable</h2>
+      <p>Estos términos se interpretarán y aplicarán de acuerdo con las leyes internacionales de propiedad intelectual y de Internet. Cualquier disputa será resuelta en los tribunales de la jurisdicción correspondiente al domicilio del usuario o del desarrollador, según corresponda.</p>
+
+      <h2>13. Contacto</h2>
+      <p>Para preguntas sobre estos términos, contacta a través de nuestro repositorio en GitHub.</p>
+      
+      <a href="index.html" class="back-link">← Volver a LinkKit</a>
+    </div>
+  </div>
+</body>
+</html>

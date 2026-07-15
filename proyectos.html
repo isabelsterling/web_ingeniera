@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio de proyectos de Isabel Sterling - Ingeniería de Software con Inteligencia Artificial" />
+  <meta name="author" content="Isabel Sterling" />
+  <title>Proyectos | Isabel Sterling</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="navbar-brand">
+        <img src="img/logo.svg" alt="Isabel Sterling" class="logo-svg" />
+        <span class="brand-text">Isabel <span class="brand-accent">Sterling</span></span>
+      </div>
+      
+      <div class="menu-toggle" id="menuToggle" aria-label="Menú">
+        <i class="fas fa-bars"></i>
+      </div>
+      
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="proyectos.html" class="active">Proyectos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      
+      <a href="https://wa.me/51953870664?text=Hola%20Isabel%2C%20vi%20tu%20portafolio%20y%20me%20gust%C3%B3%20tu%20trabajo.%20%C2%BFTe%20parece%20bien%20si%20conversamos%20sobre%20una%20idea%20que%20tengo%3F" class="btn-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ========== HEADER ========== -->
+    <section class="projects-header" data-aos="fade-up">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Portafolio de Proyectos</span>
+          <h1>Desarrollos que <span class="gradient-text">construyen el futuro</span></h1>
+          <p>Como estudiante de <strong>Ingeniería de Software con Inteligencia Artificial</strong>, 
+          cada proyecto representa una oportunidad para aplicar conceptos de programación, 
+          diseño de sistemas y resolución de problemas del mundo real.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ESTADÍSTICAS ========== -->
+    <section class="projects-stats" data-aos="fade-up" data-aos-delay="50">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number" id="totalProjects">0</span>
+            <span class="stat-label">Proyectos Totales</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="jsProjects">0</span>
+            <span class="stat-label">JavaScript</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="pythonProjects">0</span>
+            <span class="stat-label">Python</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="gamesProjects">0</span>
+            <span class="stat-label">Videojuegos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FILTROS ========== -->
+    <section class="filters-section" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
+        <div class="filters-container">
+          <button class="filter-btn active" data-filter="all">📋 Todos</button>
+          <button class="filter-btn" data-filter="javascript">⚙️ JavaScript</button>
+          <button class="filter-btn" data-filter="productividad">📊 Productividad</button>
+          <button class="filter-btn" data-filter="ia">🤖 Inteligencia Artificial</button>
+          <button class="filter-btn" data-filter="python">🐍 Python</button>
+          <button class="filter-btn" data-filter="herramientas">🛠️ Herramientas</button>
+          <button class="filter-btn" data-filter="juegos">🎮 Juegos</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROYECTOS ========== -->
+    <section class="projects-section" data-aos="fade-up" data-aos-delay="150">
+      <div class="container">
+        
+        <!-- ============================================================
+             JAVASCRIPT
+             ============================================================ -->
+        <div class="category-wrapper" data-category="javascript">
+          <div class="category-header">
+            <div>
+              <h2><i class="fab fa-js"></i> JavaScript</h2>
+              <p>Aplicaciones interactivas con lógica de programación y manipulación del DOM</p>
+            </div>
+            <span class="category-count">7 proyectos</span>
+          </div>
+          <div class="projects-grid">
+            
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="project-icon">
+                <i class="fas fa-calculator"></i>
+              </div>
+              <h3>Calculadora Básica</h3>
+              <p>Implementación de operaciones aritméticas con interfaz de usuario interactiva. Practica manejo de eventos y lógica de programación.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Eventos</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/calculadora/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="250">
+              <div class="project-icon">
+                <i class="fas fa-exchange-alt"></i>
+              </div>
+              <h3>Conversor de Monedas</h3>
+              <p>Consumo de API REST para obtener tasas de cambio en tiempo real. Implementación de gráficos, historial y persistencia de datos.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">API REST</span>
+                <span class="tech-tag">Chart.js</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/conversor-de-monedas/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+              <div class="project-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <h3>Reloj Mundial</h3>
+              <p>Manejo de zonas horarias con la API Date de JavaScript. Actualización en tiempo real y visualización de múltiples ciudades.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Date API</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/world-clock/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="350">
+              <div class="project-icon">
+                <i class="fas fa-question-circle"></i>
+              </div>
+              <h3>Trivia Interactiva</h3>
+              <p>Desarrollo de un juego de preguntas con sistema de puntuación, temporizador y múltiples niveles de dificultad usando Canvas API.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Canvas API</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/trivia/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+              <div class="project-icon">
+                <i class="fas fa-save"></i>
+              </div>
+              <h3>Notas con LocalStorage</h3>
+              <p>CRUD completo con persistencia en el navegador. Implementación de categorías, búsqueda y exportación de datos.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">localStorage</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/notes-app/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="450">
+              <div class="project-icon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <h3>Agenda / Calendario</h3>
+              <p>Calendario interactivo con eventos, drag & drop, recordatorios y persistencia en localStorage. Implementación de vistas mensual/semanal/diaria.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">localStorage</span>
+                <span class="tech-tag">Drag & Drop</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/calendar/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="500">
+              <div class="project-icon">
+                <i class="fas fa-key"></i>
+              </div>
+              <h3>Generador de Contraseñas</h3>
+              <p>Algoritmo de generación de contraseñas seguras con análisis de entropía en tiempo real. Personalización de longitud y caracteres.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Algoritmos</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/password-generator/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ============================================================
+             PRODUCTIVIDAD
+             ============================================================ -->
+        <div class="category-wrapper" data-category="productividad">
+          <div class="category-header">
+            <div>
+              <h2><i class="fas fa-chart-line"></i> Productividad</h2>
+              <p>Herramientas para la organización personal y gestión del tiempo</p>
+            </div>
+            <span class="category-count">5 proyectos</span>
+          </div>
+          <div class="projects-grid">
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="project-icon">
+                <i class="fas fa-check-square"></i>
+              </div>
+              <h3>Lista de Tareas</h3>
+              <p>To-Do List con CRUD completo, filtros por estado y persistencia. Practica manipulación del DOM y manejo de eventos.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">DOM</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/to-do-list/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="250">
+              <div class="project-icon">
+                <i class="fas fa-check-double"></i>
+              </div>
+              <h3>Administrador de Hábitos</h3>
+              <p>Seguimiento de hábitos diarios con estadísticas de racha, categorías y progreso semanal. Sistema de persistencia con localStorage.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">localStorage</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/habit-tracker/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+              <div class="project-icon">
+                <i class="fas fa-calendar-week"></i>
+              </div>
+              <h3>Planificador Semanal</h3>
+              <p>Organización de tareas por día con drag & drop, prioridades, horarios y persistencia. Implementación de interacciones avanzadas.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Drag & Drop</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/weekly-planner/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="350">
+              <div class="project-icon">
+                <i class="fas fa-sticky-note"></i>
+              </div>
+              <h3>Organizador de Apuntes</h3>
+              <p>Sistema de notas con categorías, etiquetas, búsqueda y colores personalizables. Ideal para estudiantes y profesionales.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">localStorage</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/notes-organizer/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+              <div class="project-icon">
+                <i class="fas fa-birthday-cake"></i>
+              </div>
+              <h3>Agenda de Cumpleaños</h3>
+              <p>Gestión de cumpleaños con recordatorios, filtros por mes, notificaciones y organización por fechas. Sistema de alertas automáticas.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">localStorage</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/birthday-agenda/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ============================================================
+             INTELIGENCIA ARTIFICIAL
+             ============================================================ -->
+        <div class="category-wrapper" data-category="ia">
+          <div class="category-header">
+            <div>
+              <h2><i class="fas fa-brain"></i> Inteligencia Artificial</h2>
+              <p>Aplicaciones que integran NLP y Machine Learning</p>
+            </div>
+            <span class="category-count">1 proyecto</span>
+          </div>
+          <div class="projects-grid">
+            
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="project-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <h3>Chatbot con NLP</h3>
+              <p>Implementación de un bot conversacional que utiliza Procesamiento de Lenguaje Natural para reconocer intenciones y responder preguntas sobre el portafolio.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">NLP</span>
+                <span class="tech-tag">IA</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/chatbot/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Probar Chatbot
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ============================================================
+             PYTHON
+             ============================================================ -->
+        <div class="category-wrapper" data-category="python">
+          <div class="category-header">
+            <div>
+              <h2><i class="fab fa-python"></i> Python</h2>
+              <p>Desarrollos en backend, automatización y lógica de programación</p>
+            </div>
+            <span class="category-count">2 proyectos</span>
+          </div>
+          <div class="projects-grid">
+            
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="project-icon">
+                <i class="fas fa-key"></i>
+              </div>
+              <h3>Generador de Contraseñas</h3>
+              <p>Programa en Python que genera contraseñas aleatorias seguras con cálculo de entropía, análisis de seguridad y persistencia de historial.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Random</span>
+                <span class="tech-tag">Seguridad</span>
+                <span class="tech-tag">JSON</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/password-generator/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="250">
+              <div class="project-icon">
+                <i class="fas fa-dice"></i>
+              </div>
+              <h3>Adivina el Número</h3>
+              <p>Juego de consola interactivo donde el usuario adivina un número aleatorio. Implementación de bucles, condicionales y manejo de entrada.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Bucles</span>
+                <span class="tech-tag">Condicionales</span>
+                <span class="tech-tag">Consola</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/adivina-numero/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ============================================================
+             HERRAMIENTAS
+             ============================================================ -->
+        <div class="category-wrapper" data-category="herramientas">
+          <div class="category-header">
+            <div>
+              <h2><i class="fas fa-tools"></i> Herramientas Online</h2>
+              <p>Utilidades web para el día a día</p>
+            </div>
+            <span class="category-count">1 proyecto</span>
+          </div>
+          <div class="projects-grid">
+
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="project-icon">
+                <i class="fas fa-link"></i>
+              </div>
+              <h3>Link Tools</h3>
+              <p>Suite de herramientas para gestión de enlaces: acortador de URLs, generador de códigos QR, verificador de enlaces y constructor UTM.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">API</span>
+              </div>
+              <div class="project-links">
+                <a href="proyectos/link-tools/index.html" class="btn-project demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ============================================================
+             JUEGOS
+             ============================================================ -->
+        <div class="category-wrapper" data-category="juegos">
+          <div class="category-header">
+            <div>
+              <h2><i class="fas fa-gamepad"></i> Videojuegos</h2>
+              <p>Colección de juegos desarrollados con HTML5 Canvas y JavaScript</p>
+            </div>
+            <span class="category-count">13 juegos</span>
+          </div>
+          <div class="games-showcase">
+            <div class="games-info">
+              <div class="games-icon">
+                <i class="fas fa-gamepad"></i>
+              </div>
+              <div class="games-description">
+                <h3>🎮 Sector de Videojuegos</h3>
+                <p>Esta colección representa mi enfoque en el desarrollo de experiencias interactivas. Cada juego implementa diferentes conceptos de programación: física, inteligencia artificial básica, manejo de colisiones y diseño de interfaces responsivas.</p>
+                <div class="games-tech">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Canvas API</span>
+                  <span class="tech-tag">DOM</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="games-list">
+              <div class="game-badge">
+                <span class="game-icon">🐍</span>
+                <span class="game-name">Snake</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">🧩</span>
+                <span class="game-name">Tetris</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">🐦</span>
+                <span class="game-name">Flappy Bird</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">🎴</span>
+                <span class="game-name">Memorama</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">🏓</span>
+                <span class="game-name">Ping Pong</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">🧱</span>
+                <span class="game-name">Breakout</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">🏎️</span>
+                <span class="game-name">Carreras</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">🎱</span>
+                <span class="game-name">Billiards</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">🚀</span>
+                <span class="game-name">Nave Espacial</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">🧟</span>
+                <span class="game-name">Zombie Survival</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">🧩</span>
+                <span class="game-name">2048</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">✊</span>
+                <span class="game-name">Piedra, Papel o Tijera</span>
+              </div>
+              <div class="game-badge">
+                <span class="game-icon">🎨</span>
+                <span class="game-name">Pixel Art</span>
+              </div>
+            </div>
+
+            <a href="proyectos/juegos/index.html" class="btn-games">
+              <i class="fas fa-play"></i> Ver todos los juegos
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="cta" data-aos="fade-up">
+      <div class="container">
+        <div class="cta-content">
+          <h2>¿Te interesa <span class="gradient-text">colaborar</span> conmigo?</h2>
+          <p>Estoy abierta a nuevos proyectos, pasantías y oportunidades de aprendizaje en el mundo del desarrollo de software e inteligencia artificial.</p>
+          <a href="contacto.html" class="btn btn-primary btn-large">
+            <i class="fas fa-comment-dots"></i> Hablemos
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="img/logo-footer.svg" alt="Isabel Sterling" class="logo-svg-footer" />
+          <span>Isabel Sterling</span>
+        </div>
+        <p>Estudiante de Ingeniería de Software con IA, creando soluciones tecnológicas innovadoras.</p>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Enlaces rápidos</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Contacto</h3>
+        <p>
+          <i class="fas fa-envelope"></i> 
+          <a href="mailto:1663551@senati.pe?subject=Contacto%20desde%20tu%20portafolio&body=Hola%20Isabel%2C%20me%20gustaría%20contactarte%20para%20..." target="_blank" rel="noopener noreferrer">
+            1663551@senati.pe
+          </a>
+        </p>
+        <p>
+          <i class="fab fa-whatsapp"></i> 
+          <a href="https://wa.me/51953870664?text=Hola%20Isabel%2C%20vi%20tu%20portafolio%20y%20me%20gust%C3%B3%20tu%20trabajo.%20%C2%BFTe%20parece%20bien%20si%20conversamos%20sobre%20una%20idea%20que%20tengo%3F" 
+            target="_blank" 
+            rel="noopener noreferrer">
+            953 870 664
+          </a>
+        </p>
+        <p>
+          <i class="fas fa-map-marker-alt"></i> 
+          <a href="https://www.google.com/maps/place/Arequipa,+Peru/@-16.398822,-71.566829,12z/" 
+            target="_blank" 
+            rel="noopener noreferrer">
+            Arequipa, Perú
+          </a>
+        </p>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Redes Sociales</h3>
+        <div class="social-links">
+          <a href="https://www.facebook.com/isabelsterlingg" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/isabelsterlingg/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/isabel-sterling-9995793b3/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/isabelsterling" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+          <a href="https://www.youtube.com/@isabelsterlingg" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Isabel Sterling - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  
+  <script>
+    // Contador de proyectos por categoría
+    document.addEventListener('DOMContentLoaded', () => {
+      const totalProjects = document.querySelectorAll('.project-card').length;
+      const jsProjects = document.querySelector('.category-wrapper[data-category="javascript"] .project-card')?.length || 0;
+      const pythonProjects = document.querySelector('.category-wrapper[data-category="python"] .project-card')?.length || 0;
+      const gamesProjects = 13; // Manual count
+      
+      document.getElementById('totalProjects').textContent = totalProjects;
+      document.getElementById('jsProjects').textContent = jsProjects;
+      document.getElementById('pythonProjects').textContent = pythonProjects;
+      document.getElementById('gamesProjects').textContent = gamesProjects;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>🧩 2048 | Isabel Sterling</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-wrapper">
+        <!-- Botón para volver -->
+        <a href="../../juegos/index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Volver a Juegos
+        </a>
+
+        <div class="game-container">
+            <!-- Header -->
+            <div class="game-header">
+                <div class="game-title">
+                    <div class="title-icon">🧩</div>
+                    <div>
+                        <h1>2048</h1>
+                        <p class="subtitle">¡Combina los números!</p>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button class="control-btn" id="restartBtn" title="Reiniciar">
+                        <i class="fas fa-redo-alt"></i>
+                    </button>
+                    <button class="control-btn" id="undoBtn" title="Deshacer">
+                        <i class="fas fa-undo-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="game-stats">
+                <div class="stat-box">
+                    <span class="stat-label">🏆 Puntaje</span>
+                    <span class="stat-value" id="score">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">🏅 Mejor</span>
+                    <span class="stat-value" id="highScore">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">📊 Meta</span>
+                    <span class="stat-value" id="goal">2048</span>
+                </div>
+            </div>
+
+            <!-- Tablero -->
+            <div class="board-wrapper">
+                <div class="board" id="board">
+                    <!-- Generado por JS -->
+                </div>
+
+                <!-- Overlay de game over -->
+                <div class="game-overlay" id="gameOverOverlay" style="display: none;">
+                    <div class="overlay-content">
+                        <i class="fas fa-skull"></i>
+                        <h2>¡Game Over!</h2>
+                        <p>Puntaje: <span id="finalScore">0</span></p>
+                        <button class="play-again-btn" id="playAgainBtn">
+                            <i class="fas fa-redo-alt"></i> Jugar de nuevo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Overlay de victoria -->
+                <div class="game-overlay" id="victoryOverlay" style="display: none;">
+                    <div class="overlay-content">
+                        <i class="fas fa-trophy"></i>
+                        <h2>🎉 ¡Ganaste!</h2>
+                        <p>¡Llegaste a 2048!</p>
+                        <p>Puntaje: <span id="victoryScore">0</span></p>
+                        <div class="victory-buttons">
+                            <button class="play-again-btn" id="continueBtn">
+                                <i class="fas fa-arrow-right"></i> Continuar jugando
+                            </button>
+                            <button class="play-again-btn" id="victoryRestartBtn">
+                                <i class="fas fa-redo-alt"></i> Jugar de nuevo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles de teclado info -->
+            <div class="controls-info">
+                <div class="key-group">
+                    <span class="key-label">Mover:</span>
+                    <kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd>
+                    <span class="key-separator">o</span>
+                    <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>
+                </div>
+                <div class="key-group">
+                    <span class="key-label">Deshacer:</span>
+                    <kbd>Z</kbd>
+                </div>
+                <div class="key-group">
+                    <span class="key-label">Reiniciar:</span>
+                    <kbd>R</kbd>
+                </div>
+            </div>
+
+            <!-- Controles táctiles (móvil) -->
+            <div class="touch-controls">
+                <div class="touch-grid">
+                    <button class="touch-btn" data-direction="up">
+                        <i class="fas fa-chevron-up"></i>
+                    </button>
+                    <div class="touch-row">
+                        <button class="touch-btn" data-direction="left">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="touch-btn" data-direction="down">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <button class="touch-btn" data-direction="right">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="game-footer">
+                <p>
+                    <i class="fas fa-info-circle"></i>
+                    Usa las flechas para mover los números. ¡Combina dos números iguales para sumarlos!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

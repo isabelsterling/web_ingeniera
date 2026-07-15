@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Administrador de Hábitos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <a href="../../proyectos.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Volver a Proyectos
+        </a>
+
+        <div class="app-card">
+            <!-- Header -->
+            <div class="app-header">
+                <div class="header-icon">
+                    <i class="fas fa-check-double"></i>
+                </div>
+                <div class="header-text">
+                    <h1>Administrador de <span class="gradient-text">Hábitos</span></h1>
+                    <p>Registra y sigue tus hábitos diarios</p>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalHabits">0</span>
+                        <span class="stat-label">Total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="completedToday">0</span>
+                        <span class="stat-label">Hechos hoy</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="streakDays">0</span>
+                        <span class="stat-label">Racha 🔥</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario para agregar hábito -->
+            <div class="add-habit-section">
+                <div class="input-group">
+                    <input type="text" id="habitInput" placeholder="Ej: Hacer ejercicio, Leer 30 min..." maxlength="50">
+                    <select id="habitCategory">
+                        <option value="salud">💪 Salud</option>
+                        <option value="productividad">📊 Productividad</option>
+                        <option value="aprendizaje">📚 Aprendizaje</option>
+                        <option value="social">🤝 Social</option>
+                        <option value="bienestar">🧘 Bienestar</option>
+                    </select>
+                    <button id="addHabitBtn">
+                        <i class="fas fa-plus"></i> Agregar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filters-section">
+                <button class="filter-btn active" data-filter="all">📋 Todos</button>
+                <button class="filter-btn" data-filter="salud">💪 Salud</button>
+                <button class="filter-btn" data-filter="productividad">📊 Productividad</button>
+                <button class="filter-btn" data-filter="aprendizaje">📚 Aprendizaje</button>
+                <button class="filter-btn" data-filter="social">🤝 Social</button>
+                <button class="filter-btn" data-filter="bienestar">🧘 Bienestar</button>
+            </div>
+
+            <!-- Lista de hábitos -->
+            <div class="habits-container">
+                <div class="habits-header">
+                    <span><i class="fas fa-list"></i> Mis hábitos</span>
+                    <button id="resetTodayBtn" class="reset-today">
+                        <i class="fas fa-undo-alt"></i> Reiniciar hoy
+                    </button>
+                </div>
+                <div class="habits-list" id="habitsList">
+                    <div class="empty-state">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>No tienes hábitos</h3>
+                        <p>Agrega tu primer hábito usando el formulario de arriba</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progreso semanal -->
+            <div class="weekly-progress">
+                <h3><i class="fas fa-calendar-week"></i> Progreso de la semana</h3>
+                <div class="week-grid" id="weekGrid">
+                    <!-- Generado por JS -->
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="app-footer">
+                <p>
+                    <i class="fas fa-fire"></i>
+                    <span>Los hábitos se reinician automáticamente cada día a las 00:00</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

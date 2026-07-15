@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Chatbot IA | Isabel Sterling</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chatbot-container">
+        <!-- Botón para volver al portafolio -->
+        <a href="../../proyectos.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Volver a Proyectos
+        </a>
+
+        <div class="chatbot-card">
+            <!-- Header mejorado -->
+            <div class="chatbot-header">
+                <div class="bot-avatar">
+                    <i class="fas fa-robot"></i>
+                    <span class="avatar-badge">IA</span>
+                </div>
+                <div class="bot-info">
+                    <h1>Asistente IA <span class="version-badge">v2.0</span></h1>
+                    <p>Siempre conectado | Reconocimiento de intenciones</p>
+                </div>
+                <div class="bot-status">
+                    <span class="status-dot"></span>
+                    <span>En línea</span>
+                    <span class="status-time" id="statusTime">-</span>
+                </div>
+            </div>
+
+            <!-- Área de mensajes con scroll personalizado -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message welcome-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-header">
+                            <span class="message-sender">Asistente IA</span>
+                        </div>
+                        <p>¡Hola! Soy tu asistente virtual. 🤖</p>
+                        <p>Puedo ayudarte con información sobre:</p>
+                        <ul class="features-list">
+                            <li>📌 ¿Quién soy?</li>
+                            <li>💻 Mis habilidades</li>
+                            <li>📂 Mis proyectos</li>
+                            <li>📞 Cómo contactarme</li>
+                            <li>🎓 Mi formación</li>
+                            <li>💡 Curiosidades tecnológicas</li>
+                        </ul>
+                        <p>💡 <strong>Tip:</strong> Escribe <code>/help</code> para ver todos los comandos disponibles.</p>
+                    </div>
+                    <div class="message-time">Ahora</div>
+                </div>
+            </div>
+
+            <!-- Indicador de escritura mejorado -->
+            <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+                <span class="typing-text">El asistente está escribiendo...</span>
+            </div>
+
+            <!-- Área de entrada mejorada -->
+            <div class="chat-input-area">
+                <div class="input-wrapper">
+                    <div class="input-actions">
+                        <button class="input-action-btn" id="clearChatBtn" title="Limpiar chat">
+                            <i class="fas fa-broom"></i>
+                        </button>
+                    </div>
+                    <input type="text" id="userInput" placeholder="Escribe tu mensaje aquí..." autocomplete="off">
+                    <button id="sendBtn" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                
+                <!-- Sugerencias mejoradas con más opciones -->
+                <div class="input-suggestions">
+                    <button class="suggestion-btn" data-question="¿Qué habilidades tienes?">
+                        <i class="fas fa-code"></i> Habilidades
+                    </button>
+                    <button class="suggestion-btn" data-question="¿Qué proyectos has hecho?">
+                        <i class="fas fa-folder-open"></i> Proyectos
+                    </button>
+                    <button class="suggestion-btn" data-question="¿Cómo puedo contactarte?">
+                        <i class="fas fa-phone"></i> Contacto
+                    </button>
+                    <button class="suggestion-btn" data-question="¿Qué servicios ofreces?">
+                        <i class="fas fa-briefcase"></i> Servicios
+                    </button>
+                    <button class="suggestion-btn" data-question="Dame un dato curioso">
+                        <i class="fas fa-lightbulb"></i> Curiosidad
+                    </button>
+                    <button class="suggestion-btn" data-question="/help">
+                        <i class="fas fa-question-circle"></i> Comandos
+                    </button>
+                </div>
+
+                <!-- Contador de mensajes -->
+                <div class="chat-stats">
+                    <span id="messageCount">0</span> mensajes enviados
+                </div>
+            </div>
+        </div>
+
+        <!-- Información adicional mejorada -->
+        <div class="chatbot-footer">
+            <div class="footer-info">
+                <span><i class="fas fa-brain"></i> Procesamiento de Lenguaje Natural (NLP)</span>
+                <span><i class="fas fa-microchip"></i> Reconocimiento de intenciones</span>
+                <span><i class="fas fa-command"></i> Comandos rápidos: /help</span>
+            </div>
+            <div class="footer-version">
+                <span>v2.0</span>
+                <span>|</span>
+                <span><i class="fas fa-code"></i> Isabel Sterling</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    
+    <!-- Script para actualizar estado -->
+    <script>
+        // Actualizar hora del estado
+        function updateStatusTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('es-ES', { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+            const statusTime = document.getElementById('statusTime');
+            if (statusTime) {
+                statusTime.textContent = `· ${timeString}`;
+            }
+        }
+        
+        // Actualizar cada minuto
+        updateStatusTime();
+        setInterval(updateStatusTime, 60000);
+        
+        // Contador de mensajes (se actualiza desde el script principal)
+        function updateMessageCount(count) {
+            const messageCount = document.getElementById('messageCount');
+            if (messageCount) {
+                messageCount.textContent = count;
+            }
+        }
+        
+        // Exponer función para actualizar desde el script principal
+        window.updateMessageCount = updateMessageCount;
+    </script>
+</body>
+</html>

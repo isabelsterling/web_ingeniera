@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>🐦 Flappy Bird - Juego</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-wrapper">
+        <!-- Botón para volver -->
+        <a href="../../juegos/index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Volver a Juegos
+        </a>
+
+        <div class="game-container">
+            <!-- Header del juego -->
+            <div class="game-header">
+                <div class="game-title">
+                    <div class="title-icon">🐦</div>
+                    <div>
+                        <h1>Flappy Bird</h1>
+                        <p class="subtitle">¡Vuela sin chocar!</p>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button class="control-btn" id="restartBtn" title="Reiniciar">
+                        <i class="fas fa-redo-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="game-stats">
+                <div class="stat-box">
+                    <span class="stat-label">🏆 Puntaje</span>
+                    <span class="stat-value" id="score">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">🏅 Mejor</span>
+                    <span class="stat-value" id="highScore">0</span>
+                </div>
+            </div>
+
+            <!-- Canvas del juego -->
+            <div class="canvas-wrapper">
+                <canvas id="gameCanvas" width="400" height="600"></canvas>
+                
+                <!-- Overlay de inicio -->
+                <div class="game-overlay" id="startOverlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-crow"></i>
+                        <h2>🐦 Flappy Bird</h2>
+                        <p>Presiona <kbd>Espacio</kbd> o <kbd>Click</kbd> para volar</p>
+                        <p class="hint">Evita las tuberías y obtén el mayor puntaje</p>
+                        <button class="play-btn" id="startBtn">
+                            <i class="fas fa-play"></i> Jugar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Overlay de game over -->
+                <div class="game-overlay" id="gameOverOverlay" style="display: none;">
+                    <div class="overlay-content">
+                        <i class="fas fa-skull"></i>
+                        <h2>¡Game Over!</h2>
+                        <p>Puntaje: <span id="finalScore">0</span></p>
+                        <p>Mejor: <span id="finalHighScore">0</span></p>
+                        <button class="play-again-btn" id="playAgainBtn">
+                            <i class="fas fa-redo-alt"></i> Reintentar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles táctiles (móvil) -->
+            <div class="touch-controls" id="touchControls">
+                <button class="touch-btn" id="touchFlap">
+                    <i class="fas fa-crow"></i> ¡Volar!
+                </button>
+            </div>
+
+            <!-- Controles de teclado info -->
+            <div class="controls-info">
+                <div class="key-group">
+                    <span class="key-label">Volar:</span>
+                    <kbd>Espacio</kbd> <span class="key-separator">o</span> <kbd>Click</kbd> <span class="key-separator">o</span> <kbd>↑</kbd>
+                </div>
+                <div class="key-group">
+                    <span class="key-label">Reiniciar:</span>
+                    <kbd>R</kbd>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="game-footer">
+                <p>
+                    <i class="fas fa-info-circle"></i>
+                    Toca o presiona espacio para que el pájaro vuele. ¡No choques con las tuberías!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
